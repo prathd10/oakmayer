@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oakmayer | Exquisite Artisanal Cookies & Luxury Gifting</title>
+  <meta name="description" content="Indulge in Oakmayer's handcrafted premium cookies. Baked in small batches with heritage methods and the world's finest single-origin ingredients. Explore our curated collections.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Premium Loader Screen -->
+  <div id="loader-screen">
+    <div class="loader-content">
+      <div class="loader-logo" id="loader-logo-spans">
+        <span>O</span>
+        <span>A</span>
+        <span>K</span>
+        <span>M</span>
+        <span>A</span>
+        <span>Y</span>
+        <span>E</span>
+        <span>R</span>
+      </div>
+      <div class="loader-progress-bar">
+        <div class="loader-progress" id="loader-progress-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Translucent Blurred Header -->
+  <header id="main-header">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo" id="header-logo">OAKMAYER</a>
+      <nav id="navbar-links">
+        <a href="#collection">The Collection</a>
+        <a href="#customizer">Build A Box</a>
+        <a href="#gifting">Gifting Suite</a>
+        <a href="#" id="corporate-nav-btn">Corporate Concierge</a>
+      </nav>
+      <div class="header-icons">
+        <button class="nav-icon" id="cart-toggle-btn" aria-label="Open shopping bag">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="header-cart-count">0</span>
+        </button>
+        <!-- Hamburger button (mobile only) -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation">&times;</button>
+    <nav class="mobile-nav-links">
+      <a href="#collection" class="mobile-nav-link">The Collection</a>
+      <a href="#customizer" class="mobile-nav-link">Build A Box</a>
+      <a href="#gifting" class="mobile-nav-link">Gifting Suite</a>
+      <a href="#" class="mobile-nav-link" id="corporate-mobile-btn">Corporate Concierge</a>
+    </nav>
+    <div class="mobile-nav-footer">
+      <span class="gold-accent">OAKMAYER</span>
+      <p>Artisanal. Uncompromising. Yours.</p>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero-section">
+    <!-- Background video loop -->
+    <video autoplay muted loop playsinline class="hero-video-bg" id="hero-bg-video">
+      <source src="https://videos.pexels.com/video-files/5945778/5945778-uhd_2560_1440_25fps.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+    
+    <div class="container hero-container-centered">
+      <div class="hero-content centered-content" id="hero-content-block">
+        <span class="gold-accent">The Signature Curation</span>
+        <h1>Radical. Gourmet. Unforgiving.</h1>
+        <p>36-hour low-temp cured brown butter dough. Studio weighed, hand-rolled, and baked to a crisp golden shell with a soft, molten core.</p>
+        <div class="hero-ctas">
+          <a href="#customizer" class="btn-premium btn-hero" id="hero-cta-primary">Curate Your Selection</a>
+        </div>
+      </div>
+    </div>
+    <a href="#collection" class="scroll-indicator" id="hero-scroll-btn">
+      <span>Scroll Down</span>
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- The Collection Section -->
+  <section class="section" id="collection">
+    <div class="container">
+      <div class="section-header reveal" id="collection-header">
+        <span class="gold-accent">The Signature Menu</span>
+        <h2>Sensory Masterpieces</h2>
+      </div>
+    </div>
+    
+    <div class="showcase-container">
+      
+      <!-- Showcase Item 1 -->
+      <div class="showcase-row reveal" id="showcase-chocolate-chunk">
+        <div class="showcase-img-col">
+          <div class="showcase-img-wrapper">
+            <img src="assets/hero_cookie.png" alt="The Oakmayer Dark Chocolate Chunk Cookie" class="showcase-img">
+          </div>
+        </div>
+        <div class="showcase-text-col">
+          <div class="showcase-text-content">
+            <span class="showcase-num">01 / 07</span>
+            <h3 class="showcase-title">The Dark Chocolate Chunk</h3>
+            <p class="showcase-ingredients">72% Single-Origin Venezuelan Cacao & Maldon Sea Salt</p>
+            <p class="showcase-desc">Our signature 36-hour cold-cured brown butter dough, baked to an golden, chewy state, studded with gooey dark chocolate pools.</p>
+            <div class="showcase-action">
+              <span class="showcase-price">$45 / Selection Box of 6</span>
+              <button class="cookie-add-btn showcase-btn" data-cookie="Chocolate Chunk" data-price="45" data-image="assets/hero_cookie.png">
+                + Add Selection
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Showcase Item 2 -->
+      <div class="showcase-row reveal showcase-reverse" id="showcase-hazelnut-praline">
+        <div class="showcase-img-col">
+          <div class="showcase-img-wrapper">
+            <img src="assets/cookie_hazelnut.png" alt="The Golden Hazelnut Praline Cookie" class="showcase-img">
+          </div>
+        </div>
+        <div class="showcase-text-col">
+          <div class="showcase-text-content">
+            <span class="showcase-num">02 / 07</span>
+            <h3 class="showcase-title">The Golden Hazelnut Praline</h3>
+            <p class="showcase-ingredients">Piedmont Hazelnuts & House-Made Dark Chocolate Praline</p>
+            <p class="showcase-desc">Rich caramelised brown butter dough folded with double-roasted hazelnuts, featuring a luxurious liquid praline core.</p>
+            <div class="showcase-action">
+              <span class="showcase-price">$48 / Selection Box of 6</span>
+              <button class="cookie-add-btn showcase-btn" data-cookie="Hazelnut Praline" data-price="48" data-image="assets/cookie_hazelnut.png">
+                + Add Selection
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Showcase Item 3 -->
+      <div class="showcase-row reveal" id="showcase-pistachio-rose">
+        <div class="showcase-img-col">
+          <div class="showcase-img-wrapper">
+            <img src="assets/cookie_pistachio.png" alt="The Pistachio Rose Blossom Cookie" class="showcase-img">
+          </div>
+        </div>
+        <div class="showcase-text-col">
+          <div class="showcase-text-content">
+            <span class="showcase-num">03 / 07</span>
+            <h3 class="showcase-title">The Pistachio Rose Blossom</h3>
+            <p class="showcase-ingredients">Persian Pistachios, Cardamom & Organic Rose Petals</p>
+            <p class="showcase-desc">Infused with premium ground cardamom, loaded with ivory chocolate chunks, topped with hand-crushed pistachios and rose blossoms.</p>
+            <div class="showcase-action">
+              <span class="showcase-price">$52 / Selection Box of 6</span>
+              <button class="cookie-add-btn showcase-btn" data-cookie="Pistachio Rose" data-price="52" data-image="assets/cookie_pistachio.png">
+                + Add Selection
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Showcase Item 4 -->
+      <div class="showcase-row reveal showcase-reverse" id="showcase-smoked-pecan">
+        <div class="showcase-img-col">
+          <div class="showcase-img-wrapper">
+            <img src="assets/cookie_pecan.png" alt="The Smoked Sea Salt Pecan Cookie" class="showcase-img">
+          </div>
+        </div>
+        <div class="showcase-text-col">
+          <div class="showcase-text-content">
+            <span class="showcase-num">04 / 07</span>
+            <h3 class="showcase-title">The Smoked Sea Salt Pecan</h3>
+            <p class="showcase-ingredients">Toasted Georgia Pecans & 40% Maple-Smoked Milk Chocolate</p>
+            <p class="showcase-desc">Slow-toasted maple pecans folded into brown butter dough, studded with maple-smoked milk chocolate pools, and finished with oak-wood smoked sea salt flakes.</p>
+            <div class="showcase-action">
+              <span class="showcase-price">$46 / Selection Box of 6</span>
+              <button class="cookie-add-btn showcase-btn" data-cookie="Smoked Pecan" data-price="46" data-image="assets/cookie_pecan.png">
+                + Add Selection
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Showcase Item 5 -->
+      <div class="showcase-row reveal" id="showcase-sesame-matcha">
+        <div class="showcase-img-col">
+          <div class="showcase-img-wrapper">
+            <img src="assets/cookie_sesame.png" alt="The Midnight Sesame Matcha Cookie" class="showcase-img">
+          </div>
+        </div>
+        <div class="showcase-text-col">
+          <div class="showcase-text-content">
+            <span class="showcase-num">05 / 07</span>
+            <h3 class="showcase-title">The Midnight Sesame Matcha</h3>
+            <p class="showcase-ingredients">Uji Matcha Chocolate & Roasted Black Sesame Praline</p>
+            <p class="showcase-desc">Activated charcoal dough with a liquid black sesame center, topped with organic Uji matcha white chocolate chunks and toasted black sesame seeds.</p>
+            <div class="showcase-action">
+              <span class="showcase-price">$50 / Selection Box of 6</span>
+              <button class="cookie-add-btn showcase-btn" data-cookie="Sesame Matcha" data-price="50" data-image="assets/cookie_sesame.png">
+                + Add Selection
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Showcase Item 6 -->
+      <div class="showcase-row reveal showcase-reverse" id="showcase-lavender-earl">
+        <div class="showcase-img-col">
+          <div class="showcase-img-wrapper">
+            <img src="assets/cookie_lavender.png" alt="The Lavender Earl Grey Cookie" class="showcase-img">
+          </div>
+        </div>
+        <div class="showcase-text-col">
+          <div class="showcase-text-content">
+            <span class="showcase-num">06 / 07</span>
+            <h3 class="showcase-title">The Lavender Earl Grey</h3>
+            <p class="showcase-ingredients">Organic Bergamot, Dried Lavender & Ivory Chocolate</p>
+            <p class="showcase-desc">Floral bergamot tea is steeped directly into our brown butter dough, folded with ivory chocolate pools and studded with dried lavender buds, finished with edible gold flecks.</p>
+            <div class="showcase-action">
+              <span class="showcase-price">$54 / Selection Box of 6</span>
+              <button class="cookie-add-btn showcase-btn" data-cookie="Lavender Earl Grey" data-price="54" data-image="assets/cookie_lavender.png">
+                + Add Selection
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Showcase Item 7 -->
+      <div class="showcase-row reveal" id="showcase-salted-caramel">
+        <div class="showcase-img-col">
+          <div class="showcase-img-wrapper">
+            <img src="assets/cookie_caramel.png" alt="The Salted Caramel Toffee Cookie" class="showcase-img">
+          </div>
+        </div>
+        <div class="showcase-text-col">
+          <div class="showcase-text-content">
+            <span class="showcase-num">07 / 07</span>
+            <h3 class="showcase-title">The Salted Caramel Toffee</h3>
+            <p class="showcase-ingredients">House-Made Salted Caramel & Valrhona Toffee Shards</p>
+            <p class="showcase-desc">Our most indulgent creation — thick, crinkled dough with molten pockets of salted house-made caramel and hand-cut toffee shards, crowned with fleur de sel crystals.</p>
+            <div class="showcase-action">
+              <span class="showcase-price">$56 / Selection Box of 6</span>
+              <button class="cookie-add-btn showcase-btn" data-cookie="Salted Caramel Toffee" data-price="56" data-image="assets/cookie_caramel.png">
+                + Add Selection
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Parallax Peeking Section -->
+  <section class="section-parallax" style="background-image: url('assets/cookie_tower.png');">
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content reveal">
+      <span class="gold-accent">The Ultimate Obsession</span>
+      <h2>Tower of Indulgence</h2>
+      <p>Layers of slow-cured chocolate chunk, toasted praline, and cardamom pistachio stacked in pure architectural beauty. Made to turn any moment into a celebration.</p>
+      <a href="#customizer" class="btn-premium btn-hero">Curate Your Tower</a>
+    </div>
+  </section>
+
+  <!-- Our Craft Section -->
+  <section class="section section-dark" id="craft">
+    <div class="container">
+      <div class="section-header reveal" id="craft-header" style="margin-bottom: 6rem;">
+        <span class="gold-accent">The Standard</span>
+        <h2>Uncompromising Bakery Craft</h2>
+      </div>
+      
+      <div class="craft-minimal-grid reveal" id="craft-minimal-block">
+        <div class="craft-min-col">
+          <span class="craft-num">01</span>
+          <h3>Single-Origin Sourcing</h3>
+          <p>Heritage Normandy dairy butter and rare grand-cru chocolates sourced from sustainable estates.</p>
+        </div>
+        <div class="craft-min-col">
+          <span class="craft-num">02</span>
+          <h3>36-Hour Cold Rest</h3>
+          <p>dough fermentation developing complex caramel compounds and texture densities.</p>
+        </div>
+        <div class="craft-min-col">
+          <span class="craft-num">03</span>
+          <h3>Bespoke Finishing</h3>
+          <p>Every piece is individually hand-weighed, rolled, and decorated with fleur de sel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Build Your Box Configurator Section -->
+  <section class="section" id="customizer">
+    <div class="container">
+      <div class="section-header reveal" id="configurator-header">
+        <span class="gold-accent">Bespoke Curation</span>
+        <h2>Build Your Custom Box</h2>
+        <p>Choose your box size and mix your signature assortment. Perfectly hand-packaged inside our rigid navy gift drawers with gold-leaf wrap.</p>
+      </div>
+
+      <!-- Tab Toggles -->
+      <div class="config-tabs-container reveal">
+        <button class="config-tab-btn active" id="tab-btn-personal" data-mode="personal">Personal Indulgence</button>
+        <button class="config-tab-btn" id="tab-btn-gifting" data-mode="gift">Bespoke Gifting Box</button>
+      </div>
+
+      <div class="configurator-wrapper reveal" id="configurator-container">
+        <!-- Visual Box Slot Preview -->
+        <div class="config-box-visual" id="config-visual-panel">
+          <div class="box-title-indicator">
+            <h3 id="visual-box-title">The Classic Drawer</h3>
+            <p id="visual-box-subtitle">Fill all 6 slots to complete your box</p>
+          </div>
+          
+          <div class="box-slots-container box-6" id="box-slots-wrapper">
+            <!-- Slots will be generated dynamically by JavaScript -->
+          </div>
+
+          <div class="box-status-bar" id="box-progress-bar">
+            Selection: <span id="filled-slots-count">0</span> / <span id="total-slots-count">6</span> Completed
+          </div>
+        </div>
+
+        <!-- Controls panel -->
+        <div class="config-controls" id="config-controls-panel">
+          <div>
+            <!-- Step 1: Select Box Size -->
+            <div class="config-step">
+              <span class="step-label">Step 1: Choose Box Size</span>
+              <div class="size-selector">
+                <button class="size-btn active" data-size="6" data-price="25" data-title="The Classic Drawer" id="btn-size-6">
+                  <span class="size-name">Classic</span>
+                  <span class="size-capacity">6 Cookies</span>
+                  <span class="size-price">$25</span>
+                </button>
+                <button class="size-btn" data-size="12" data-price="48" data-title="The Grand Cabinet" id="btn-size-12">
+                  <span class="size-name">Grand</span>
+                  <span class="size-capacity">12 Cookies</span>
+                  <span class="size-price">$48</span>
+                </button>
+                <button class="size-btn" data-size="24" data-price="90" data-title="The Sovereign Vault" id="btn-size-24">
+                  <span class="size-name">Sovereign</span>
+                  <span class="size-capacity">24 Cookies</span>
+                  <span class="size-price">$90</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Choose Cookie Quantities -->
+            <div class="config-step">
+              <span class="step-label">Step 2: Customise Flavors</span>
+              <div class="config-products-list">
+                
+                <!-- Product row 1 -->
+                <div class="config-product-row" id="row-prod-chocolate">
+                  <img src="assets/hero_cookie.png" alt="Dark Chocolate Chunk Cookie">
+                  <div class="config-product-details">
+                    <h4>Dark Chocolate Chunk</h4>
+                    <p>72% dark chocolate & Maldon sea salt</p>
+                  </div>
+                  <div class="config-quantity-selector">
+                    <button class="qty-btn dec-btn" data-target="chocolate-chunk" aria-label="Decrease quantity">-</button>
+                    <span class="qty-val" id="qty-chocolate-chunk">0</span>
+                    <button class="qty-btn inc-btn" data-target="chocolate-chunk" aria-label="Increase quantity">+</button>
+                  </div>
+                </div>
+
+                <!-- Product row 2 -->
+                <div class="config-product-row" id="row-prod-hazelnut">
+                  <img src="assets/cookie_hazelnut.png" alt="Hazelnut Praline Cookie">
+                  <div class="config-product-details">
+                    <h4>Hazelnut Praline</h4>
+                    <p>Brown butter & dark praline core</p>
+                  </div>
+                  <div class="config-quantity-selector">
+                    <button class="qty-btn dec-btn" data-target="hazelnut-praline" aria-label="Decrease quantity">-</button>
+                    <span class="qty-val" id="qty-hazelnut-praline">0</span>
+                    <button class="qty-btn inc-btn" data-target="hazelnut-praline" aria-label="Increase quantity">+</button>
+                  </div>
+                </div>
+
+                <!-- Product row 3 -->
+                <div class="config-product-row" id="row-prod-pistachio">
+                  <img src="assets/cookie_pistachio.png" alt="Pistachio Rose Cookie">
+                  <div class="config-product-details">
+                    <h4>Pistachio Rose Blossom</h4>
+                    <p>Cardamom, pistachios & dried rose petals</p>
+                  </div>
+                  <div class="config-quantity-selector">
+                    <button class="qty-btn dec-btn" data-target="pistachio-rose" aria-label="Decrease quantity">-</button>
+                    <span class="qty-val" id="qty-pistachio-rose">0</span>
+                    <button class="qty-btn inc-btn" data-target="pistachio-rose" aria-label="Increase quantity">+</button>
+                  </div>
+                </div>
+
+                <!-- Product row 4 -->
+                <div class="config-product-row" id="row-prod-pecan">
+                  <img src="assets/cookie_pecan.png" alt="Smoked Sea Salt Pecan Cookie">
+                  <div class="config-product-details">
+                    <h4>Smoked Sea Salt Pecan</h4>
+                    <p>Maple pecan & smoked milk chocolate</p>
+                  </div>
+                  <div class="config-quantity-selector">
+                    <button class="qty-btn dec-btn" data-target="smoked-pecan" aria-label="Decrease quantity">-</button>
+                    <span class="qty-val" id="qty-smoked-pecan">0</span>
+                    <button class="qty-btn inc-btn" data-target="smoked-pecan" aria-label="Increase quantity">+</button>
+                  </div>
+                </div>
+
+                <!-- Product row 5 -->
+                <div class="config-product-row" id="row-prod-sesame">
+                  <img src="assets/cookie_sesame.png" alt="Midnight Sesame Matcha Cookie">
+                  <div class="config-product-details">
+                    <h4>Midnight Sesame Matcha</h4>
+                    <p>Matcha chunks & liquid black sesame core</p>
+                  </div>
+                  <div class="config-quantity-selector">
+                    <button class="qty-btn dec-btn" data-target="sesame-matcha" aria-label="Decrease quantity">-</button>
+                    <span class="qty-val" id="qty-sesame-matcha">0</span>
+                    <button class="qty-btn inc-btn" data-target="sesame-matcha" aria-label="Increase quantity">+</button>
+                  </div>
+                </div>
+
+                <!-- Product row 6 -->
+                <div class="config-product-row" id="row-prod-lavender">
+                  <img src="assets/cookie_lavender.png" alt="Lavender Earl Grey Cookie">
+                  <div class="config-product-details">
+                    <h4>Lavender Earl Grey</h4>
+                    <p>Bergamot butter & ivory chocolate, gold flecks</p>
+                  </div>
+                  <div class="config-quantity-selector">
+                    <button class="qty-btn dec-btn" data-target="lavender-earl" aria-label="Decrease quantity">-</button>
+                    <span class="qty-val" id="qty-lavender-earl">0</span>
+                    <button class="qty-btn inc-btn" data-target="lavender-earl" aria-label="Increase quantity">+</button>
+                  </div>
+                </div>
+
+                <!-- Product row 7 -->
+                <div class="config-product-row" id="row-prod-caramel">
+                  <img src="assets/cookie_caramel.png" alt="Salted Caramel Toffee Cookie">
+                  <div class="config-product-details">
+                    <h4>Salted Caramel Toffee</h4>
+                    <p>Molten caramel core & Valrhona toffee shards</p>
+                  </div>
+                  <div class="config-quantity-selector">
+                    <button class="qty-btn dec-btn" data-target="salted-caramel" aria-label="Decrease quantity">-</button>
+                    <span class="qty-val" id="qty-salted-caramel">0</span>
+                    <button class="qty-btn inc-btn" data-target="salted-caramel" aria-label="Increase quantity">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Gifting Customisation (Only shown in Gifting Mode) -->
+            <div class="config-step" id="gifting-details-step" style="display: none;">
+              <span class="step-label">Step 3: Gift Details</span>
+              <div class="gift-options-selectors">
+                <div class="gift-option-row">
+                  <label for="gift-ribbon-select">Satin Ribbon Shade</label>
+                  <select id="gift-ribbon-select" class="gift-select">
+                    <option value="Champagne Gold">Champagne Gold</option>
+                    <option value="Emerald Velvet">Emerald Velvet</option>
+                    <option value="Sapphire Silk">Sapphire Silk</option>
+                  </select>
+                </div>
+                <div class="gift-option-row" style="margin-top: 1.25rem;">
+                  <label for="gift-seal-select">Wax Seal Impression</label>
+                  <select id="gift-seal-select" class="gift-select">
+                    <option value="Classic Monogram">Classic Monogram</option>
+                    <option value="Fleur-de-lis">Fleur-de-lis</option>
+                    <option value="Holiday Crest">Holiday Crest</option>
+                  </select>
+                </div>
+                <div class="gift-option-row" style="margin-top: 1.25rem;">
+                  <label for="gift-message-input">Handwritten Gift Card Message</label>
+                  <textarea id="gift-message-input" class="gift-textarea" placeholder="Enter your personalized gift note (Max 150 characters)..." maxlength="150"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Summary -->
+          <div class="config-summary">
+            <div class="summary-price-box">
+              <span class="summary-label">Total Box Price</span>
+              <span class="summary-total" id="configurator-price-display">$25.00</span>
+            </div>
+            <button class="btn-premium btn-primary" id="configurator-add-to-cart-btn" disabled>Add Box to Bag</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gifting Section -->
+  <section class="section gifting-section" id="gifting">
+    <div class="container gifting-grid">
+      <div class="gifting-content reveal" id="gifting-text-block">
+        <span class="gold-accent">The Art of Giving</span>
+        <h2>The Ultimate Gift of Exquisite Taste</h2>
+        <p>Whether expressing gratitude, celebrating milestones, or simply surprising someone special, our iconic navy gift boxes tied with luxurious silk ribbon deliver a memorable experience. Each box comes with a custom gold-foil greeting card and menu index.</p>
+        <div class="gifting-features">
+          <div class="gift-feat-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>Gold-foil hot-stamped greetings card</span>
+          </div>
+          <div class="gift-feat-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>Wax-sealed parchment overlay</span>
+          </div>
+          <div class="gift-feat-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>Express temperature-controlled shipping</span>
+          </div>
+        </div>
+        <div class="gifting-ctas" style="margin-top: 2rem; display: flex; gap: 1rem;">
+          <a href="#customizer" class="btn-premium btn-secondary" id="gifting-cta">Design A Gift Box</a>
+          <button class="btn-premium btn-hero" id="corporate-gifting-btn">Inquire Corporate Bulk</button>
+        </div>
+      </div>
+      <div class="gifting-image-container reveal" id="gifting-img-block">
+        <img src="assets/cookie_box.png" alt="Oakmayer Navy & Gold Gift Box with ribbon wrapper" class="gifting-image" id="gifting-box-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Testimonials -->
+  <section class="section" id="reviews-section" style="background-color: var(--beige-light); border-top: 1px solid rgba(38, 57, 72, 0.04);">
+    <div class="container reveal">
+      <div class="reviews-carousel" id="testimonials-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="quote-icon"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h3c0 4-2 6-4 7v1Zm12 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h3c0 4-2 6-4 7v1Z"/></svg>
+        
+        <!-- Quote 1 -->
+        <div class="review-slide active" data-index="0">
+          <blockquote class="review-text">"Oakmayer has transformed baking into a high-art form. The chocolate chunk cookie is a masterclass in textures and deep, rich tones. Simply a revelation."</blockquote>
+          <div class="review-author">VOGUE EDITORIAL</div>
+        </div>
+
+        <!-- Quote 2 -->
+        <div class="review-slide" data-index="1">
+          <blockquote class="review-text">"Every cookie delivers a complex sensory narrative. The cold curing of the dough elevates butter and caramel to unexpected heights. A true gourmet luxury."</blockquote>
+          <div class="review-author">THE MICHELIN GUIDE</div>
+        </div>
+
+        <!-- Quote 3 -->
+        <div class="review-slide" data-index="2">
+          <blockquote class="review-text">"The ultimate gift box. The packaging mirrors a bespoke high-jewelry container. Opening it is an event, eating it is pure divine indulgence."</blockquote>
+          <div class="review-author">LUXURY INSIDER</div>
+        </div>
+
+        <div class="review-dots" id="testimonial-dots-container">
+          <div class="dot active" data-index="0"></div>
+          <div class="dot" data-index="1"></div>
+          <div class="dot" data-index="2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup Section -->
+  <section class="section newsletter-section" id="newsletter">
+    <div class="container reveal">
+      <div class="newsletter-wrapper">
+        <span class="gold-accent">Join The Circle</span>
+        <h2>Bespoke Batches, Direct to Your Inbox</h2>
+        <p>Subscribe to receive exclusive invitations for our seasonal micro-batches, limited edition packaging collaborations, and culinary insights.</p>
+        <form class="newsletter-form" id="email-subscribe-form" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Enter your email address" class="newsletter-input" id="newsletter-email-field" required>
+          <button type="submit" class="newsletter-btn" id="newsletter-submit-btn">Request Access</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shopping Bag Drawer (Slide out) -->
+  <div class="cart-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer-panel">
+    <div class="cart-header">
+      <h3>Your Selection Bag</h3>
+      <button class="cart-close-btn" id="cart-close-btn" aria-label="Close cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    
+    <div class="cart-items" id="cart-items-container">
+      <!-- Cart items will be loaded dynamically by JavaScript -->
+      <div class="cart-empty-msg" id="empty-cart-message">Your selection bag is empty.</div>
+    </div>
+    
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-value" id="cart-subtotal-display">$0.00</span>
+      </div>
+      <button class="btn-premium btn-primary cart-checkout-btn" id="checkout-action-btn">Proceed to Secure Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Toast notifications container -->
+  <div class="toast-container" id="toast-wrapper"></div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>OAKMAYER</h3>
+        <p>Bespoke artisanal pastry and luxury gifting. Making sensory indulgence a permanent lifestyle choice.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Pinterest">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="18" y1="18" y2="6"/><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Menu Collections</h4>
+        <ul>
+          <li><a href="#collection">Signature Cookies</a></li>
+          <li><a href="#customizer">Bespoke Boxes</a></li>
+          <li><a href="#gifting">Corporate Orders</a></li>
+          <li><a href="#gifting">Holiday Curations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>The Brand</h4>
+        <ul>
+          <li><a href="#craft">Our Craft</a></li>
+          <li><a href="#footer">The Story</a></li>
+          <li><a href="#newsletter">The Circle Newsletter</a></li>
+          <li><a href="#footer">Press Highlights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support & Services</h4>
+        <ul>
+          <li><a href="#footer">Faq & Shipping Info</a></li>
+          <li><a href="#footer">Corporate Gifting Info</a></li>
+          <li><a href="#footer">Bakery Locations</a></li>
+          <li><a href="#footer">Contact Concierge</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Oakmayer Artisanal. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Corporate Concierge Inquiry Modal -->
+  <div class="inquiry-modal-overlay" id="corporate-inquiry-modal">
+    <div class="inquiry-modal-card">
+      <button class="inquiry-close-btn" id="inquiry-close-btn" aria-label="Close Inquiry Modal">&times;</button>
+      <div class="inquiry-modal-header">
+        <span class="gold-accent">Concierge Desk</span>
+        <h2>Corporate & Bulk Inquiries</h2>
+        <p>Bespoke custom boxes, corporate branding stamps, and bulk delivery details. Tell us about your event and our concierge team will reach out within 12 hours.</p>
+      </div>
+      <form class="inquiry-form" id="corporate-inquiry-form" onsubmit="event.preventDefault();">
+        <div class="inquiry-form-row">
+          <div class="inquiry-form-group">
+            <label for="inquiry-name">Full Name</label>
+            <input type="text" id="inquiry-name" required placeholder="Alexander Vance">
+          </div>
+          <div class="inquiry-form-group">
+            <label for="inquiry-email">Work Email</label>
+            <input type="email" id="inquiry-email" required placeholder="alex@company.com">
+          </div>
+        </div>
+        <div class="inquiry-form-row">
+          <div class="inquiry-form-group">
+            <label for="inquiry-company">Company Name</label>
+            <input type="text" id="inquiry-company" required placeholder="Vance Industries">
+          </div>
+          <div class="inquiry-form-group">
+            <label for="inquiry-qty">Estimated Quantity</label>
+            <select id="inquiry-qty" class="inquiry-select">
+              <option value="20-50">20 – 50 boxes</option>
+              <option value="50-100">50 – 100 boxes</option>
+              <option value="100-500">100 – 500 boxes</option>
+              <option value="500+">500+ boxes</option>
+            </select>
+          </div>
+        </div>
+        <div class="inquiry-form-group">
+          <label for="inquiry-requirements">Special Branding & Scent Customizations</label>
+          <textarea id="inquiry-requirements" placeholder="Custom logo wax stamp colors, special gift card message notes, or dietary preferences..." class="inquiry-textarea"></textarea>
+        </div>
+        <button type="submit" class="btn-premium btn-hero inquiry-submit-btn" id="inquiry-submit-btn">Submit Inquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
