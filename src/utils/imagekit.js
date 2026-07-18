@@ -9,7 +9,7 @@ export function getImageKitUrl(path, transformations = '') {
   if (!path) return '';
   
   // If it's already an absolute URL or starting with assets/, return as-is
-  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('assets/')) {
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('assets/') || path.startsWith('/assets/')) {
     return path;
   }
 

@@ -11,16 +11,16 @@ export const state = {
     title: "The Classic Drawer",
     mode: "personal",
     selections: {
-      'chocolate-chunk': { count: 0, name: "Chocolate Chunk", image: "assets/hero_cookie.png" },
-      'hazelnut-praline': { count: 0, name: "Hazelnut Praline", image: "assets/cookie_hazelnut.png" },
-      'pistachio-rose': { count: 0, name: "Pistachio Rose", image: "assets/cookie_pistachio.png" },
-      'smoked-pecan': { count: 0, name: "Smoked Pecan", image: "assets/cookie_pecan.png" },
-      'sesame-matcha': { count: 0, name: "Sesame Matcha", image: "assets/cookie_sesame.png" },
-      'lavender-earl': { count: 0, name: "Lavender Earl Grey", image: "assets/cookie_lavender.png" },
-      'salted-caramel': { count: 0, name: "Salted Caramel Toffee", image: "assets/cookie_caramel.png" },
-      'classic-vanilla': { count: 0, name: "Classic Vanilla Bean", image: "assets/cookie_vanilla.png" },
-      'espresso-macchiato': { count: 0, name: "Espresso Macchiato", image: "assets/cookie_espresso.png" },
-      'velvet-cheesecake': { count: 0, name: "Velvet Cheesecake", image: "assets/cookie_velvet.png" }
+      'chocolate-chunk': { count: 0, name: "Chocolate Chunk", image: "/assets/hero_cookie.png" },
+      'hazelnut-praline': { count: 0, name: "Hazelnut Praline", image: "/assets/cookie_hazelnut.png" },
+      'pistachio-rose': { count: 0, name: "Pistachio Rose", image: "/assets/cookie_pistachio.png" },
+      'smoked-pecan': { count: 0, name: "Smoked Pecan", image: "/assets/cookie_pecan.png" },
+      'sesame-matcha': { count: 0, name: "Sesame Matcha", image: "/assets/cookie_sesame.png" },
+      'lavender-earl': { count: 0, name: "Lavender Earl Grey", image: "/assets/cookie_lavender.png" },
+      'salted-caramel': { count: 0, name: "Salted Caramel Toffee", image: "/assets/cookie_caramel.png" },
+      'classic-vanilla': { count: 0, name: "Classic Vanilla Bean", image: "/assets/cookie_vanilla.png" },
+      'espresso-macchiato': { count: 0, name: "Espresso Macchiato", image: "/assets/cookie_espresso.png" },
+      'velvet-cheesecake': { count: 0, name: "Velvet Cheesecake", image: "/assets/cookie_velvet.png" }
     }
   }
 };

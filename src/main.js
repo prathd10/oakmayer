@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       addCookieToCart(
         productName,
         state.customizer.price,
-        "assets/cookie_box.png"
+        "/assets/cookie_box.png"
       );
 
       showToast(`Added ${productName} to Bag!`);

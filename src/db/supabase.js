@@ -12,7 +12,7 @@ export const LOCAL_COOKIES = [
     ingredients: "72% Single-Origin Venezuelan Cacao & Maldon Sea Salt",
     description: "36-hour cured brown butter dough, baked to a golden crisp with gooey chocolate pools.",
     price: 45,
-    image: "assets/hero_cookie.png",
+    image: "/assets/hero_cookie.png",
     top_seller: true
   },
   {
@@ -21,7 +21,7 @@ export const LOCAL_COOKIES = [
     ingredients: "Piedmont Hazelnuts & House-Made Dark Chocolate Praline",
     description: "Brown butter dough folded with double-roasted hazelnuts and a molten praline core.",
     price: 48,
-    image: "assets/cookie_hazelnut.png",
+    image: "/assets/cookie_hazelnut.png",
     top_seller: true
   },
   {
@@ -30,7 +30,7 @@ export const LOCAL_COOKIES = [
     ingredients: "Persian Pistachios, Cardamom & Organic Rose Petals",
     description: "Cardamom-infused dough loaded with ivory chocolate chunks, pistachios, and organic rose petals.",
     price: 52,
-    image: "assets/cookie_pistachio.png",
+    image: "/assets/cookie_pistachio.png",
     top_seller: true
   },
   {
@@ -39,7 +39,7 @@ export const LOCAL_COOKIES = [
     ingredients: "Toasted Georgia Pecans & 40% Maple-Smoked Milk Chocolate",
     description: "Toasted maple pecans folded with maple-smoked milk chocolate, finished with smoked salt.",
     price: 46,
-    image: "assets/cookie_pecan.png",
+    image: "/assets/cookie_pecan.png",
     top_seller: true
   },
   {
@@ -48,7 +48,7 @@ export const LOCAL_COOKIES = [
     ingredients: "Uji Matcha Chocolate & Roasted Black Sesame Praline",
     description: "Activated charcoal dough with a liquid black sesame center and Uji matcha chunks.",
     price: 50,
-    image: "assets/cookie_sesame.png",
+    image: "/assets/cookie_sesame.png",
     top_seller: false
   },
   {
@@ -57,7 +57,7 @@ export const LOCAL_COOKIES = [
     ingredients: "Organic Bergamot, Dried Lavender & Ivory Chocolate",
     description: "Bergamot tea steeped dough folded with ivory chocolate and organic lavender buds.",
     price: 54,
-    image: "assets/cookie_lavender.png",
+    image: "/assets/cookie_lavender.png",
     top_seller: false
   },
   {
@@ -66,7 +66,7 @@ export const LOCAL_COOKIES = [
     ingredients: "House-Made Salted Caramel & Valrhona Toffee Shards",
     description: "Thick, crinkled dough with molten pockets of salted caramel and crunchy toffee shards.",
     price: 56,
-    image: "assets/cookie_caramel.png",
+    image: "/assets/cookie_caramel.png",
     top_seller: false
   },
   {
@@ -75,7 +75,7 @@ export const LOCAL_COOKIES = [
     ingredients: "Madagascar Vanilla & Belgian White Chocolate",
     description: "Vanilla bean dough with white chocolate pools and Bourbon vanilla sugar.",
     price: 42,
-    image: "assets/cookie_vanilla.png",
+    image: "/assets/cookie_vanilla.png",
     top_seller: false
   },
   {
@@ -84,7 +84,7 @@ export const LOCAL_COOKIES = [
     ingredients: "Espresso Infused Dough & Dark Chocolate Pools",
     description: "Dark coffee dough with milk chocolate pools and roasted espresso dust.",
     price: 44,
-    image: "assets/cookie_espresso.png",
+    image: "/assets/cookie_espresso.png",
     top_seller: false
   },
   {
@@ -93,7 +93,7 @@ export const LOCAL_COOKIES = [
     ingredients: "Red Velvet Cocoa & Sweet Cream Cheese Core",
     description: "Red cocoa dough with a rich cream cheese core and white chocolate chunks.",
     price: 47,
-    image: "assets/cookie_velvet.png",
+    image: "/assets/cookie_velvet.png",
     top_seller: false
   }
 ];
@@ -123,7 +123,7 @@ export const LOCAL_GIFT_BOXES = [
     description: "Make celebrations truly unforgettable. Features a premium box, a custom gold-foil greeting card, and a sweet, hand-baked selection of our softest cookies.",
     contents: "Classic Vanilla Bean, Salted Caramel Toffee, Velvet Cheesecake",
     price: 45,
-    image: "assets/gift_birthday.png"
+    image: "/assets/gift_birthday.png"
   },
   {
     id: 2,
@@ -132,7 +132,7 @@ export const LOCAL_GIFT_BOXES = [
     description: "Curated for romance and grand milestones. Includes a deep crimson wax-sealed message card and an elegant selection of aromatic, high-end cookies.",
     contents: "Pistachio Rose Blossom, Golden Hazelnut Praline, Midnight Sesame Matcha",
     price: 55,
-    image: "assets/gift_anniversary.png"
+    image: "/assets/gift_anniversary.png"
   },
   {
     id: 3,
@@ -141,7 +141,7 @@ export const LOCAL_GIFT_BOXES = [
     description: "Make a striking impression of professional distinction. Fully customisable ribbon and hot-stamped client greeting card alongside premium energy-boosting blends.",
     contents: "Espresso Macchiato, Smoked Sea Salt Pecan, Dark Chocolate Chunk",
     price: 65,
-    image: "assets/gift_corporate.png"
+    image: "/assets/gift_corporate.png"
   }
 ];
 

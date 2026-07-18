@@ -33,13 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "The Classic Drawer",
       mode: "personal", // 'personal' or 'gift'
       selections: {
-        'chocolate-chunk': { count: 0, name: "Chocolate Chunk", image: "assets/hero_cookie.png" },
-        'hazelnut-praline': { count: 0, name: "Hazelnut Praline", image: "assets/cookie_hazelnut.png" },
-        'pistachio-rose': { count: 0, name: "Pistachio Rose", image: "assets/cookie_pistachio.png" },
-        'smoked-pecan': { count: 0, name: "Smoked Pecan", image: "assets/cookie_pecan.png" },
-        'sesame-matcha': { count: 0, name: "Sesame Matcha", image: "assets/cookie_sesame.png" },
-        'lavender-earl': { count: 0, name: "Lavender Earl Grey", image: "assets/cookie_lavender.png" },
-        'salted-caramel': { count: 0, name: "Salted Caramel Toffee", image: "assets/cookie_caramel.png" }
+        'chocolate-chunk': { count: 0, name: "Chocolate Chunk", image: "/assets/hero_cookie.png" },
+        'hazelnut-praline': { count: 0, name: "Hazelnut Praline", image: "/assets/cookie_hazelnut.png" },
+        'pistachio-rose': { count: 0, name: "Pistachio Rose", image: "/assets/cookie_pistachio.png" },
+        'smoked-pecan': { count: 0, name: "Smoked Pecan", image: "/assets/cookie_pecan.png" },
+        'sesame-matcha': { count: 0, name: "Sesame Matcha", image: "/assets/cookie_sesame.png" },
+        'lavender-earl': { count: 0, name: "Lavender Earl Grey", image: "/assets/cookie_lavender.png" },
+        'salted-caramel': { count: 0, name: "Salted Caramel Toffee", image: "/assets/cookie_caramel.png" }
       }
     }
   };
@@ -503,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
       productName,
       state.customizer.price,
       description,
-      "assets/cookie_box.png"
+      "/assets/cookie_box.png"
     );
 
     showToast(`Added ${productName} to Bag!`);
