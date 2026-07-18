@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gifting Suite | Oakmere Luxury Caskets & Curated Gift Boxes</title>
+  <meta name="description" content="Discover Oakmere's curated luxury gift caskets. Handcrafted for birthdays, anniversaries, and corporate milestones — with gold-foil lettering, wax-sealed enclosures, and temperature-controlled delivery.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="gifting-page-body">
+
+  <!-- Fixed Background Video for Parallax Overlay -->
+  <video autoplay muted loop playsinline class="parallax-video-bg">
+    <source src="/assets/can_you_make_me_a_background_v.mp4" type="video/mp4">
+  </video>
+  <div class="parallax-video-overlay"></div>
+
+  <!-- Premium Loader Screen -->
+  <div id="loader-screen">
+    <div class="loader-content">
+      <div class="loader-logo" id="loader-logo-spans">
+        <span>O</span>
+        <span>A</span>
+        <span>K</span>
+        <span>M</span>
+        <span>E</span>
+        <span>R</span>
+        <span>E</span>
+      </div>
+      <div class="loader-progress-bar">
+        <div class="loader-progress" id="loader-progress-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Translucent Blurred Header -->
+  <header id="main-header">
+    <div class="container nav-wrapper">
+      <a href="/" class="logo" id="header-logo">OAKMERE</a>
+      <nav id="navbar-links">
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/gifting" class="nav-active">Perfect for Gifting</a>
+        <a href="/#about">About Us</a>
+      </nav>
+      <div class="header-icons">
+        <button class="nav-icon" id="cart-toggle-btn" aria-label="Open shopping bag">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="header-cart-count">0</span>
+        </button>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay (backdrop) -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <div class="mobile-nav-drawer">
+      <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation menu">&times;</button>
+      <nav class="mobile-nav-links">
+        <a href="/" class="mobile-nav-link">Home</a>
+        <a href="/menu" class="mobile-nav-link">Menu</a>
+        <a href="/gifting" class="mobile-nav-link nav-active">Perfect for Gifting</a>
+        <a href="/#about" class="mobile-nav-link">About Us</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <span class="gold-accent">OAKMERE</span>
+        <p>Artisanal. Uncompromising. Yours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gifting Hero Section -->
+  <section class="menu-hero-section gifting-hero">
+    <div class="container">
+      <div class="menu-hero-content">
+        <span class="gold-accent">The Art of Giving</span>
+        <h1>Curated Gift Caskets</h1>
+        <p>Handcrafted luxury caskets styled with double-sided gold-foil lettering, wax-sealed parchment enclosures, and temperature-controlled shipping. Curated precisely for celebrations, romantic milestones, and professional gratitude.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Bar -->
+  <div class="gifting-features-bar">
+    <div class="container gifting-features-bar-inner">
+      <div class="gifting-feat-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span>Gold-foil hot-stamped greeting cards</span>
+      </div>
+      <div class="gifting-feat-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Baked to order within 48 hours</span>
+      </div>
+      <div class="gifting-feat-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Temperature-controlled express shipping</span>
+      </div>
+      <div class="gifting-feat-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span>Wax-sealed parchment enclosures</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Curated Gift Caskets Grid -->
+  <section class="menu-collection-section gifting-collection-section">
+    <div class="container gifting-section-header reveal">
+      <span class="gold-accent">Curated Casket Collections</span>
+      <h2>Choose Your Gift</h2>
+    </div>
+    <div class="gift-boxes-grid-full" id="gift-boxes-page-container">
+      <!-- Dynamically populated from Supabase -->
+    </div>
+  </section>
+
+  <!-- Corporate CTA Banner -->
+  <section class="gifting-corporate-banner">
+    <div class="gifting-corporate-banner-inner">
+      <div class="gifting-corporate-text reveal">
+        <span class="gold-accent">For Organisations</span>
+        <h2>Bulk & Branded Orders</h2>
+        <p>Custom hot-stamped company logo, personalised ribbon colours, bulk volume delivery. Let our concierge desk orchestrate a gifting experience that reflects your brand's prestige.</p>
+        <button class="btn-premium btn-hero" id="corporate-nav-btn-gifting" style="margin-top: 2rem;">Speak to our Concierge Desk</button>
+      </div>
+      <div class="gifting-corporate-image reveal">
+        <img src="/assets/cookie_box.png" alt="Oakmere Navy & Gold Gift Box" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>OAKMERE</h3>
+        <p>Bespoke artisanal pastry and luxury gifting. Making sensory indulgence a permanent lifestyle choice.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Pinterest">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="8" y2="16"/><line x1="8" x2="16" y1="12" y2="12"/><circle cx="12" cy="12" r="10"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>The Collection</h4>
+        <ul>
+          <li><a href="/menu">Gourmet Cookies</a></li>
+          <li><a href="/#customizer">Build A Box</a></li>
+          <li><a href="/gifting">Gifting Suite</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support & Services</h4>
+        <ul>
+          <li><a href="/#footer">Faq & Shipping Info</a></li>
+          <li><a href="/#footer">Corporate Gifting Info</a></li>
+          <li><a href="/#footer">Bakery Locations</a></li>
+          <li><a href="/#footer">Contact Concierge</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Oakmere Artisanal. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer -->
+  <div class="cart-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer-panel">
+    <div class="cart-header">
+      <h3>Your Selection Drawer</h3>
+      <button class="cart-close-btn" id="cart-close-btn" aria-label="Close shopping bag">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items-container">
+      <!-- Cart items dynamically populated -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-value" id="cart-subtotal-val">$0.00</span>
+      </div>
+      <button class="btn-premium btn-primary cart-checkout-btn" id="checkout-action-btn">Proceed to checkout</button>
+    </div>
+  </aside>
+
+  <!-- Corporate Concierge Inquiry Modal -->
+  <div class="inquiry-modal-overlay" id="corporate-inquiry-modal">
+    <div class="inquiry-modal-card">
+      <button class="inquiry-close-btn" id="inquiry-close-btn" aria-label="Close Inquiry Modal">&times;</button>
+      <div class="inquiry-modal-header">
+        <span class="gold-accent">Concierge Desk</span>
+        <h2>Corporate & Bulk Inquiries</h2>
+        <p>Bespoke custom boxes, corporate branding stamps, and bulk delivery details. Tell us about your event and our concierge team will reach out within 12 hours.</p>
+      </div>
+      <form class="inquiry-form" id="corporate-inquiry-form" onsubmit="event.preventDefault();">
+        <div class="inquiry-form-row">
+          <div class="inquiry-form-group">
+            <label for="inquiry-name">Full Name</label>
+            <input type="text" id="inquiry-name" required placeholder="Alexander Vance">
+          </div>
+          <div class="inquiry-form-group">
+            <label for="inquiry-email">Work Email</label>
+            <input type="email" id="inquiry-email" required placeholder="alex@company.com">
+          </div>
+        </div>
+        <div class="inquiry-form-row">
+          <div class="inquiry-form-group">
+            <label for="inquiry-company">Company Name</label>
+            <input type="text" id="inquiry-company" required placeholder="Vance Industries">
+          </div>
+          <div class="inquiry-form-group">
+            <label for="inquiry-qty">Estimated Quantity</label>
+            <select id="inquiry-qty" class="inquiry-select">
+              <option value="20-50">20 – 50 boxes</option>
+              <option value="50-100">50 – 100 boxes</option>
+              <option value="100-500">100 – 500 boxes</option>
+              <option value="500+">500+ boxes</option>
+            </select>
+          </div>
+        </div>
+        <div class="inquiry-form-group">
+          <label for="inquiry-requirements">Special Branding & Scent Customizations</label>
+          <textarea id="inquiry-requirements" placeholder="Custom logo wax stamp colors, special gift card message notes, or dietary preferences..." class="inquiry-textarea"></textarea>
+        </div>
+        <button type="submit" class="btn-premium btn-hero inquiry-submit-btn" id="inquiry-submit-btn">Submit Inquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/src/gifting.js"></script>
+</body>
+</html>

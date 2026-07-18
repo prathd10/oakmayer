@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Collection | Oakmere Artisanal Cookies</title>
+  <meta name="description" content="Explore Oakmere's full menu of 10 bespoke artisanal cookies, crafted with single-origin ingredients and heritage baking methods.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="menu-page-body">
+
+  <!-- Fixed Background Video for Parallax Menu Overlay -->
+  <video autoplay muted loop playsinline class="parallax-video-bg">
+    <source src="/assets/can_you_make_me_a_background_v.mp4" type="video/mp4">
+  </video>
+  <div class="parallax-video-overlay"></div>
+
+  <!-- Premium Loader Screen -->
+  <div id="loader-screen">
+    <div class="loader-content">
+      <div class="loader-logo" id="loader-logo-spans">
+        <span>O</span>
+        <span>A</span>
+        <span>K</span>
+        <span>M</span>
+        <span>E</span>
+        <span>R</span>
+        <span>E</span>
+      </div>
+      <div class="loader-progress-bar">
+        <div class="loader-progress" id="loader-progress-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Translucent Blurred Header -->
+  <header id="main-header">
+    <div class="container nav-wrapper">
+      <a href="/" class="logo" id="header-logo">OAKMERE</a>
+      <nav id="navbar-links">
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/gifting">Perfect for Gifting</a>
+        <a href="/#about">About Us</a>
+      </nav>
+      <div class="header-icons">
+        <button class="nav-icon" id="cart-toggle-btn" aria-label="Open shopping bag">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="header-cart-count">0</span>
+        </button>
+        <!-- Hamburger button (mobile only) -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay (backdrop) -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <div class="mobile-nav-drawer">
+      <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation menu">&times;</button>
+      <nav class="mobile-nav-links">
+        <a href="/" class="mobile-nav-link">Home</a>
+        <a href="/menu" class="mobile-nav-link nav-active">Menu</a>
+        <a href="/gifting" class="mobile-nav-link">Perfect for Gifting</a>
+        <a href="/#about" class="mobile-nav-link">About Us</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <span class="gold-accent">OAKMERE</span>
+        <p>Artisanal. Uncompromising. Yours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu Header Section -->
+  <section class="menu-hero-section">
+    <div class="container">
+      <div class="menu-hero-content">
+        <span class="gold-accent">The Full Curation</span>
+        <h1>Sensory Masterpieces</h1>
+        <p>Explore our complete library of 10 micro-batch creations. Individually developed, cold-cured for 36 hours, and baked to order.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Collection Section (Parallax Menu Grid) -->
+  <section class="menu-collection-section">
+    <div class="showcase-container" id="menu-showcase-container">
+      <!-- Dynamically populated by JS (all 10 cookies) -->
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>OAKMERE</h3>
+        <p>Bespoke artisanal pastry and luxury gifting. Making sensory indulgence a permanent lifestyle choice.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Pinterest">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="8" y2="16"/><line x1="8" x2="16" y1="12" y2="12"/><circle cx="12" cy="12" r="10"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>The Brand</h4>
+        <ul>
+          <li><a href="/#craft">The Standard</a></li>
+          <li><a href="/#footer">The Story</a></li>
+          <li><a href="/#footer">Press Highlights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support & Services</h4>
+        <ul>
+          <li><a href="/#footer">Faq & Shipping Info</a></li>
+          <li><a href="/#footer">Corporate Gifting Info</a></li>
+          <li><a href="/#footer">Bakery Locations</a></li>
+          <li><a href="/#footer">Contact Concierge</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Oakmere Artisanal. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer -->
+  <div class="cart-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer-panel">
+    <div class="cart-header">
+      <h3>Your Selection Drawer</h3>
+      <button class="cart-close-btn" id="cart-close-btn" aria-label="Close shopping bag">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items-container">
+      <!-- Cart items will be generated dynamically by JavaScript -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-value" id="cart-subtotal-val">$0.00</span>
+      </div>
+      <button class="btn-premium btn-primary cart-checkout-btn" id="checkout-action-btn">Proceed to checkout</button>
+    </div>
+  </aside>
+
+  <!-- Corporate Concierge Inquiry Modal -->
+  <div class="inquiry-modal-overlay" id="corporate-inquiry-modal">
+    <div class="inquiry-modal-card">
+      <button class="inquiry-close-btn" id="inquiry-close-btn" aria-label="Close Inquiry Modal">&times;</button>
+      <div class="inquiry-modal-header">
+        <span class="gold-accent">Concierge Desk</span>
+        <h2>Corporate & Bulk Inquiries</h2>
+        <p>Bespoke custom boxes, corporate branding stamps, and bulk delivery details. Tell us about your event and our concierge team will reach out within 12 hours.</p>
+      </div>
+      <form class="inquiry-form" id="corporate-inquiry-form" onsubmit="event.preventDefault();">
+        <div class="inquiry-form-row">
+          <div class="inquiry-form-group">
+            <label for="inquiry-name">Full Name</label>
+            <input type="text" id="inquiry-name" required placeholder="Alexander Vance">
+          </div>
+          <div class="inquiry-form-group">
+            <label for="inquiry-email">Work Email</label>
+            <input type="email" id="inquiry-email" required placeholder="alex@company.com">
+          </div>
+        </div>
+        <div class="inquiry-form-row">
+          <div class="inquiry-form-group">
+            <label for="inquiry-company">Company Name</label>
+            <input type="text" id="inquiry-company" required placeholder="Vance Industries">
+          </div>
+          <div class="inquiry-form-group">
+            <label for="inquiry-qty">Estimated Quantity</label>
+            <select id="inquiry-qty" class="inquiry-select">
+              <option value="20-50">20 – 50 boxes</option>
+              <option value="50-100">50 – 100 boxes</option>
+              <option value="100-500">100 – 500 boxes</option>
+              <option value="500+">500+ boxes</option>
+            </select>
+          </div>
+        </div>
+        <div class="inquiry-form-group">
+          <label for="inquiry-requirements">Special Branding & Scent Customizations</label>
+          <textarea id="inquiry-requirements" placeholder="Custom logo wax stamp colors, special gift card message notes, or dietary preferences..." class="inquiry-textarea"></textarea>
+        </div>
+        <button type="submit" class="btn-premium btn-hero inquiry-submit-btn" id="inquiry-submit-btn">Submit Inquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/src/menu.js"></script>
+</body>
+</html>

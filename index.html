@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oakmayer | Exquisite Artisanal Cookies & Luxury Gifting</title>
-  <meta name="description" content="Indulge in Oakmayer's handcrafted premium cookies. Baked in small batches with heritage methods and the world's finest single-origin ingredients. Explore our curated collections.">
+  <title>Oakmere | Exquisite Artisanal Cookies & Luxury Gifting</title>
+  <meta name="description" content="Indulge in Oakmere's handcrafted premium cookies. Baked in small batches with heritage methods and the world's finest single-origin ingredients. Explore our curated collections.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,10 +17,9 @@
         <span>A</span>
         <span>K</span>
         <span>M</span>
-        <span>A</span>
-        <span>Y</span>
         <span>E</span>
         <span>R</span>
+        <span>E</span>
       </div>
       <div class="loader-progress-bar">
         <div class="loader-progress" id="loader-progress-line"></div>
@@ -31,12 +30,12 @@
   <!-- Translucent Blurred Header -->
   <header id="main-header">
     <div class="container nav-wrapper">
-      <a href="#" class="logo" id="header-logo">OAKMAYER</a>
+      <a href="index.html" class="logo" id="header-logo">OAKMERE</a>
       <nav id="navbar-links">
-        <a href="#collection">The Collection</a>
-        <a href="#customizer">Build A Box</a>
-        <a href="#gifting">Gifting Suite</a>
-        <a href="#" id="corporate-nav-btn">Corporate Concierge</a>
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/gifting">Perfect for Gifting</a>
+        <a href="/#about">About Us</a>
       </nav>
       <div class="header-icons">
         <button class="nav-icon" id="cart-toggle-btn" aria-label="Open shopping bag">
@@ -53,18 +52,20 @@
     </div>
   </header>
 
-  <!-- Mobile Nav Overlay -->
+  <!-- Mobile Nav Overlay (backdrop) -->
   <div class="mobile-nav-overlay" id="mobile-nav-overlay">
-    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation">&times;</button>
-    <nav class="mobile-nav-links">
-      <a href="#collection" class="mobile-nav-link">The Collection</a>
-      <a href="#customizer" class="mobile-nav-link">Build A Box</a>
-      <a href="#gifting" class="mobile-nav-link">Gifting Suite</a>
-      <a href="#" class="mobile-nav-link" id="corporate-mobile-btn">Corporate Concierge</a>
-    </nav>
-    <div class="mobile-nav-footer">
-      <span class="gold-accent">OAKMAYER</span>
-      <p>Artisanal. Uncompromising. Yours.</p>
+    <div class="mobile-nav-drawer">
+      <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation">&times;</button>
+      <nav class="mobile-nav-links">
+        <a href="/" class="mobile-nav-link">Home</a>
+        <a href="/menu" class="mobile-nav-link">Menu</a>
+        <a href="/gifting" class="mobile-nav-link">Perfect for Gifting</a>
+        <a href="/#about" class="mobile-nav-link">About Us</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <span class="gold-accent">OAKMERE</span>
+        <p>Artisanal. Uncompromising. Yours.</p>
+      </div>
     </div>
   </div>
 
@@ -72,8 +73,7 @@
   <section class="hero" id="hero-section">
     <!-- Background video loop -->
     <video autoplay muted loop playsinline class="hero-video-bg" id="hero-bg-video">
-      <source src="https://videos.pexels.com/video-files/5945778/5945778-uhd_2560_1440_25fps.mp4" type="video/mp4">
-      <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4">
+      <source src="assets/can_you_make_me_a_background_v.mp4" type="video/mp4">
     </video>
     <div class="hero-video-overlay"></div>
     
@@ -81,7 +81,7 @@
       <div class="hero-content centered-content" id="hero-content-block">
         <span class="gold-accent">The Signature Curation</span>
         <h1>Radical. Gourmet. Unforgiving.</h1>
-        <p>36-hour low-temp cured brown butter dough. Studio weighed, hand-rolled, and baked to a crisp golden shell with a soft, molten core.</p>
+        <p>We believe in patience over speed. Each signature creation is forged from a 36-hour cold-cured brown butter dough, hand-rolled in our studio, and baked to achieve a perfectly crisp outer shell yielding to a rich, molten heart of single-origin chocolate.</p>
         <div class="hero-ctas">
           <a href="#customizer" class="btn-premium btn-hero" id="hero-cta-primary">Curate Your Selection</a>
         </div>
@@ -102,169 +102,13 @@
       </div>
     </div>
     
-    <div class="showcase-container">
-      
-      <!-- Showcase Item 1 -->
-      <div class="showcase-row reveal" id="showcase-chocolate-chunk">
-        <div class="showcase-img-col">
-          <div class="showcase-img-wrapper">
-            <img src="assets/hero_cookie.png" alt="The Oakmayer Dark Chocolate Chunk Cookie" class="showcase-img">
-          </div>
-        </div>
-        <div class="showcase-text-col">
-          <div class="showcase-text-content">
-            <span class="showcase-num">01 / 07</span>
-            <h3 class="showcase-title">The Dark Chocolate Chunk</h3>
-            <p class="showcase-ingredients">72% Single-Origin Venezuelan Cacao & Maldon Sea Salt</p>
-            <p class="showcase-desc">Our signature 36-hour cold-cured brown butter dough, baked to an golden, chewy state, studded with gooey dark chocolate pools.</p>
-            <div class="showcase-action">
-              <span class="showcase-price">$45 / Selection Box of 6</span>
-              <button class="cookie-add-btn showcase-btn" data-cookie="Chocolate Chunk" data-price="45" data-image="assets/hero_cookie.png">
-                + Add Selection
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="showcase-container" id="home-showcase-container">
+      <!-- Dynamically populated by JS (top 4 cookies) -->
+    </div>
 
-      <!-- Showcase Item 2 -->
-      <div class="showcase-row reveal showcase-reverse" id="showcase-hazelnut-praline">
-        <div class="showcase-img-col">
-          <div class="showcase-img-wrapper">
-            <img src="assets/cookie_hazelnut.png" alt="The Golden Hazelnut Praline Cookie" class="showcase-img">
-          </div>
-        </div>
-        <div class="showcase-text-col">
-          <div class="showcase-text-content">
-            <span class="showcase-num">02 / 07</span>
-            <h3 class="showcase-title">The Golden Hazelnut Praline</h3>
-            <p class="showcase-ingredients">Piedmont Hazelnuts & House-Made Dark Chocolate Praline</p>
-            <p class="showcase-desc">Rich caramelised brown butter dough folded with double-roasted hazelnuts, featuring a luxurious liquid praline core.</p>
-            <div class="showcase-action">
-              <span class="showcase-price">$48 / Selection Box of 6</span>
-              <button class="cookie-add-btn showcase-btn" data-cookie="Hazelnut Praline" data-price="48" data-image="assets/cookie_hazelnut.png">
-                + Add Selection
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Showcase Item 3 -->
-      <div class="showcase-row reveal" id="showcase-pistachio-rose">
-        <div class="showcase-img-col">
-          <div class="showcase-img-wrapper">
-            <img src="assets/cookie_pistachio.png" alt="The Pistachio Rose Blossom Cookie" class="showcase-img">
-          </div>
-        </div>
-        <div class="showcase-text-col">
-          <div class="showcase-text-content">
-            <span class="showcase-num">03 / 07</span>
-            <h3 class="showcase-title">The Pistachio Rose Blossom</h3>
-            <p class="showcase-ingredients">Persian Pistachios, Cardamom & Organic Rose Petals</p>
-            <p class="showcase-desc">Infused with premium ground cardamom, loaded with ivory chocolate chunks, topped with hand-crushed pistachios and rose blossoms.</p>
-            <div class="showcase-action">
-              <span class="showcase-price">$52 / Selection Box of 6</span>
-              <button class="cookie-add-btn showcase-btn" data-cookie="Pistachio Rose" data-price="52" data-image="assets/cookie_pistachio.png">
-                + Add Selection
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Showcase Item 4 -->
-      <div class="showcase-row reveal showcase-reverse" id="showcase-smoked-pecan">
-        <div class="showcase-img-col">
-          <div class="showcase-img-wrapper">
-            <img src="assets/cookie_pecan.png" alt="The Smoked Sea Salt Pecan Cookie" class="showcase-img">
-          </div>
-        </div>
-        <div class="showcase-text-col">
-          <div class="showcase-text-content">
-            <span class="showcase-num">04 / 07</span>
-            <h3 class="showcase-title">The Smoked Sea Salt Pecan</h3>
-            <p class="showcase-ingredients">Toasted Georgia Pecans & 40% Maple-Smoked Milk Chocolate</p>
-            <p class="showcase-desc">Slow-toasted maple pecans folded into brown butter dough, studded with maple-smoked milk chocolate pools, and finished with oak-wood smoked sea salt flakes.</p>
-            <div class="showcase-action">
-              <span class="showcase-price">$46 / Selection Box of 6</span>
-              <button class="cookie-add-btn showcase-btn" data-cookie="Smoked Pecan" data-price="46" data-image="assets/cookie_pecan.png">
-                + Add Selection
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Showcase Item 5 -->
-      <div class="showcase-row reveal" id="showcase-sesame-matcha">
-        <div class="showcase-img-col">
-          <div class="showcase-img-wrapper">
-            <img src="assets/cookie_sesame.png" alt="The Midnight Sesame Matcha Cookie" class="showcase-img">
-          </div>
-        </div>
-        <div class="showcase-text-col">
-          <div class="showcase-text-content">
-            <span class="showcase-num">05 / 07</span>
-            <h3 class="showcase-title">The Midnight Sesame Matcha</h3>
-            <p class="showcase-ingredients">Uji Matcha Chocolate & Roasted Black Sesame Praline</p>
-            <p class="showcase-desc">Activated charcoal dough with a liquid black sesame center, topped with organic Uji matcha white chocolate chunks and toasted black sesame seeds.</p>
-            <div class="showcase-action">
-              <span class="showcase-price">$50 / Selection Box of 6</span>
-              <button class="cookie-add-btn showcase-btn" data-cookie="Sesame Matcha" data-price="50" data-image="assets/cookie_sesame.png">
-                + Add Selection
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Showcase Item 6 -->
-      <div class="showcase-row reveal showcase-reverse" id="showcase-lavender-earl">
-        <div class="showcase-img-col">
-          <div class="showcase-img-wrapper">
-            <img src="assets/cookie_lavender.png" alt="The Lavender Earl Grey Cookie" class="showcase-img">
-          </div>
-        </div>
-        <div class="showcase-text-col">
-          <div class="showcase-text-content">
-            <span class="showcase-num">06 / 07</span>
-            <h3 class="showcase-title">The Lavender Earl Grey</h3>
-            <p class="showcase-ingredients">Organic Bergamot, Dried Lavender & Ivory Chocolate</p>
-            <p class="showcase-desc">Floral bergamot tea is steeped directly into our brown butter dough, folded with ivory chocolate pools and studded with dried lavender buds, finished with edible gold flecks.</p>
-            <div class="showcase-action">
-              <span class="showcase-price">$54 / Selection Box of 6</span>
-              <button class="cookie-add-btn showcase-btn" data-cookie="Lavender Earl Grey" data-price="54" data-image="assets/cookie_lavender.png">
-                + Add Selection
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Showcase Item 7 -->
-      <div class="showcase-row reveal" id="showcase-salted-caramel">
-        <div class="showcase-img-col">
-          <div class="showcase-img-wrapper">
-            <img src="assets/cookie_caramel.png" alt="The Salted Caramel Toffee Cookie" class="showcase-img">
-          </div>
-        </div>
-        <div class="showcase-text-col">
-          <div class="showcase-text-content">
-            <span class="showcase-num">07 / 07</span>
-            <h3 class="showcase-title">The Salted Caramel Toffee</h3>
-            <p class="showcase-ingredients">House-Made Salted Caramel & Valrhona Toffee Shards</p>
-            <p class="showcase-desc">Our most indulgent creation — thick, crinkled dough with molten pockets of salted house-made caramel and hand-cut toffee shards, crowned with fleur de sel crystals.</p>
-            <div class="showcase-action">
-              <span class="showcase-price">$56 / Selection Box of 6</span>
-              <button class="cookie-add-btn showcase-btn" data-cookie="Salted Caramel Toffee" data-price="56" data-image="assets/cookie_caramel.png">
-                + Add Selection
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <!-- View Full Menu CTA -->
+    <div class="container" style="text-align: center; margin-top: 5rem; margin-bottom: 3rem;">
+      <a href="menu.html" class="btn-premium btn-primary" id="view-menu-cta">View Full Collection</a>
     </div>
   </section>
 
@@ -538,7 +382,19 @@
         </div>
       </div>
       <div class="gifting-image-container reveal" id="gifting-img-block">
-        <img src="assets/cookie_box.png" alt="Oakmayer Navy & Gold Gift Box with ribbon wrapper" class="gifting-image" id="gifting-box-img">
+        <img src="assets/cookie_box.png" alt="Oakmere Navy & Gold Gift Box with ribbon wrapper" class="gifting-image" id="gifting-box-img">
+      </div>
+    </div>
+
+    <!-- Curated Gift Collections Grid -->
+    <div class="container" style="margin-top: 8rem; margin-bottom: 2rem;">
+      <div class="section-header reveal" style="text-align: center; margin-bottom: 4rem;">
+        <span class="gold-accent">Curated Casket Collections</span>
+        <h2>Luxury Gift Boxes</h2>
+      </div>
+      
+      <div class="gift-boxes-grid" id="gift-boxes-container">
+        <!-- Dynamically populated from Supabase -->
       </div>
     </div>
   </section>
@@ -551,7 +407,7 @@
         
         <!-- Quote 1 -->
         <div class="review-slide active" data-index="0">
-          <blockquote class="review-text">"Oakmayer has transformed baking into a high-art form. The chocolate chunk cookie is a masterclass in textures and deep, rich tones. Simply a revelation."</blockquote>
+          <blockquote class="review-text">"Oakmere has transformed baking into a high-art form. The chocolate chunk cookie is a masterclass in textures and deep, rich tones. Simply a revelation."</blockquote>
           <div class="review-author">VOGUE EDITORIAL</div>
         </div>
 
@@ -622,7 +478,7 @@
   <footer id="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <h3>OAKMAYER</h3>
+        <h3>OAKMERE</h3>
         <p>Bespoke artisanal pastry and luxury gifting. Making sensory indulgence a permanent lifestyle choice.</p>
         <div class="footer-socials">
           <a href="#" class="social-link" aria-label="Instagram">
@@ -665,7 +521,7 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>&copy; 2026 Oakmayer Artisanal. All rights reserved.</p>
+      <p>&copy; 2026 Oakmere Artisanal. All rights reserved.</p>
       <div class="footer-bottom-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
@@ -718,6 +574,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

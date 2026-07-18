@@ -559,7 +559,7 @@ document.addEventListener('DOMContentLoaded', () => {
   newsletterForm.addEventListener('submit', () => {
     const email = newsletterEmail.value;
     if (email) {
-      showToast(`Request received! Welcome to the Oakmayer Circle.`);
+      showToast(`Request received! Welcome to the Oakmere Circle.`);
       newsletterEmail.value = '';
     }
   });
