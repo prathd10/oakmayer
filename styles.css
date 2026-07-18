@@ -1007,7 +1007,7 @@ body.loaded .hero-content.centered-content {
 
 /* Premium Gift Box section */
 .gifting-section {
-  background-color: var(--beige-dark);
+  background-color: var(--beige-light);
 }
 
 .gifting-grid {
@@ -3469,4 +3469,102 @@ header.scrolled .hamburger-btn span {
 @media (max-width: 768px) {
   .gifting-card-title { font-size: 1.7rem; }
   .gifting-features-bar-inner { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+/* Reviews Marquee Section */
+.reviews-marquee-section {
+  background-color: var(--navy);
+  border-top: 1px solid rgba(197, 160, 89, 0.15);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+  padding: 3.5rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.reviews-marquee-section::before,
+.reviews-marquee-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.reviews-marquee-section::before {
+  left: 0;
+  background: linear-gradient(to right, var(--navy), transparent);
+}
+
+.reviews-marquee-section::after {
+  right: 0;
+  background: linear-gradient(to left, var(--navy), transparent);
+}
+
+.marquee-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-card {
+  background-color: rgba(38, 57, 72, 0.7);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  padding: 2.2rem 2.5rem;
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.3s;
+}
+
+.marquee-card:hover {
+  border-color: var(--gold);
+}
+
+.marquee-rating {
+  color: var(--gold);
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.marquee-quote {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  line-height: 1.5;
+  color: var(--beige-light);
+  margin: 0 0 1.2rem 0;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.marquee-author {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
