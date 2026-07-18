@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               <p>${box.contents}</p>
             </div>
             <div class="gifting-card-footer">
-              <span class="gifting-card-price">$${box.price}</span>
+              <span class="gifting-card-price">₹${box.price}</span>
               <button class="gift-box-btn" data-name="${box.name}" data-price="${box.price}" data-image="${box.image}">Order This Casket</button>
             </div>
           </div>

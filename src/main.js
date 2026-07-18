@@ -5,7 +5,7 @@ import {
   generateShowcaseRowHTML, 
   showToast 
 } from './shared.js';
-import { fetchCookies, fetchGiftBoxes } from './db/supabase.js';
+import { fetchCookies, fetchGiftBoxes, incrementCookieViews, incrementCookieClicks } from './db/supabase.js';
 import { getImageKitUrl } from './utils/imagekit.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     showcaseContainer.innerHTML = '';
     topSellers.forEach((cookie, index) => {
       showcaseContainer.innerHTML += generateShowcaseRowHTML(cookie, index);
+      // Track view event
+      incrementCookieViews(cookie.id);
     });
 
     // Add event listeners for dynamic add to cart buttons
@@ -29,7 +31,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         const name = btn.getAttribute('data-cookie');
         const price = parseFloat(btn.getAttribute('data-price'));
         const image = btn.getAttribute('data-image');
+        const id = btn.getAttribute('data-id');
         
+        // Track click event
+        if (id) {
+          incrementCookieClicks(parseInt(id));
+        }
+
         // Add as a selection box package
         addCookieToCart(
           `Signature Selection Box`, 
@@ -63,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               ${box.contents}
             </div>
             <div class="gift-box-footer">
-              <span class="gift-box-price">$${box.price}</span>
+              <span class="gift-box-price">₹${box.price}</span>
               <button class="gift-box-btn" data-name="${box.name}" data-price="${box.price}" data-image="${box.image}">Order Casket</button>
             </div>
           </div>
@@ -172,7 +180,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (totalSlotsCount) totalSlotsCount.textContent = state.customizer.capacity;
     
     calculateCurrentPrice();
-    if (configPriceDisplay) configPriceDisplay.textContent = `$${state.customizer.price.toFixed(2)}`;
+    if (configPriceDisplay) configPriceDisplay.textContent = `₹${state.customizer.price.toFixed(2)}`;
 
     if (configAddToCartBtn) {
       if (totalSelected === state.customizer.capacity) {

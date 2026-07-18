@@ -11,7 +11,7 @@ export const LOCAL_COOKIES = [
     name: "The Dark Chocolate Chunk",
     ingredients: "72% Single-Origin Venezuelan Cacao & Maldon Sea Salt",
     description: "36-hour cured brown butter dough, baked to a golden crisp with gooey chocolate pools.",
-    price: 45,
+    price: 220,
     image: "/assets/hero_cookie.png",
     top_seller: true
   },
@@ -20,7 +20,7 @@ export const LOCAL_COOKIES = [
     name: "The Golden Hazelnut Praline",
     ingredients: "Piedmont Hazelnuts & House-Made Dark Chocolate Praline",
     description: "Brown butter dough folded with double-roasted hazelnuts and a molten praline core.",
-    price: 48,
+    price: 250,
     image: "/assets/cookie_hazelnut.png",
     top_seller: true
   },
@@ -29,7 +29,7 @@ export const LOCAL_COOKIES = [
     name: "The Pistachio Rose Blossom",
     ingredients: "Persian Pistachios, Cardamom & Organic Rose Petals",
     description: "Cardamom-infused dough loaded with ivory chocolate chunks, pistachios, and organic rose petals.",
-    price: 52,
+    price: 280,
     image: "/assets/cookie_pistachio.png",
     top_seller: true
   },
@@ -38,7 +38,7 @@ export const LOCAL_COOKIES = [
     name: "The Smoked Sea Salt Pecan",
     ingredients: "Toasted Georgia Pecans & 40% Maple-Smoked Milk Chocolate",
     description: "Toasted maple pecans folded with maple-smoked milk chocolate, finished with smoked salt.",
-    price: 46,
+    price: 240,
     image: "/assets/cookie_pecan.png",
     top_seller: true
   },
@@ -47,7 +47,7 @@ export const LOCAL_COOKIES = [
     name: "The Midnight Sesame Matcha",
     ingredients: "Uji Matcha Chocolate & Roasted Black Sesame Praline",
     description: "Activated charcoal dough with a liquid black sesame center and Uji matcha chunks.",
-    price: 50,
+    price: 230,
     image: "/assets/cookie_sesame.png",
     top_seller: false
   },
@@ -56,7 +56,7 @@ export const LOCAL_COOKIES = [
     name: "The Lavender Earl Grey",
     ingredients: "Organic Bergamot, Dried Lavender & Ivory Chocolate",
     description: "Bergamot tea steeped dough folded with ivory chocolate and organic lavender buds.",
-    price: 54,
+    price: 215,
     image: "/assets/cookie_lavender.png",
     top_seller: false
   },
@@ -65,7 +65,7 @@ export const LOCAL_COOKIES = [
     name: "The Salted Caramel Toffee",
     ingredients: "House-Made Salted Caramel & Valrhona Toffee Shards",
     description: "Thick, crinkled dough with molten pockets of salted caramel and crunchy toffee shards.",
-    price: 56,
+    price: 225,
     image: "/assets/cookie_caramel.png",
     top_seller: false
   },
@@ -74,7 +74,7 @@ export const LOCAL_COOKIES = [
     name: "The Classic Vanilla Bean",
     ingredients: "Madagascar Vanilla & Belgian White Chocolate",
     description: "Vanilla bean dough with white chocolate pools and Bourbon vanilla sugar.",
-    price: 42,
+    price: 200,
     image: "/assets/cookie_vanilla.png",
     top_seller: false
   },
@@ -83,7 +83,7 @@ export const LOCAL_COOKIES = [
     name: "The Espresso Macchiato",
     ingredients: "Espresso Infused Dough & Dark Chocolate Pools",
     description: "Dark coffee dough with milk chocolate pools and roasted espresso dust.",
-    price: 44,
+    price: 235,
     image: "/assets/cookie_espresso.png",
     top_seller: false
   },
@@ -92,7 +92,7 @@ export const LOCAL_COOKIES = [
     name: "The Velvet Cheesecake",
     ingredients: "Red Velvet Cocoa & Sweet Cream Cheese Core",
     description: "Red cocoa dough with a rich cream cheese core and white chocolate chunks.",
-    price: 47,
+    price: 245,
     image: "/assets/cookie_velvet.png",
     top_seller: false
   }
@@ -159,3 +159,144 @@ export async function fetchGiftBoxes() {
     return LOCAL_GIFT_BOXES;
   }
 }
+
+export async function incrementCookieViews(cookieId) {
+  if (!supabase) return;
+  try {
+    // Try via RPC first
+    const { error } = await supabase.rpc('increment_cookie_views', { cookie_id: cookieId });
+    if (error) {
+      console.warn("RPC increment views failed, falling back to update", error);
+      // Fallback
+      const { data, error: selectError } = await supabase.from('cookies').select('views').eq('id', cookieId).single();
+      if (!selectError && data) {
+        await supabase.from('cookies').update({ views: (data.views || 0) + 1 }).eq('id', cookieId);
+      }
+    }
+  } catch (e) {
+    console.error("Failed to increment cookie views", e);
+  }
+}
+
+export async function incrementCookieClicks(cookieId) {
+  if (!supabase) return;
+  try {
+    // Try via RPC first
+    const { error } = await supabase.rpc('increment_cookie_clicks', { cookie_id: cookieId });
+    if (error) {
+      console.warn("RPC increment clicks failed, falling back to update", error);
+      // Fallback
+      const { data, error: selectError } = await supabase.from('cookies').select('clicks').eq('id', cookieId).single();
+      if (!selectError && data) {
+        await supabase.from('cookies').update({ clicks: (data.clicks || 0) + 1 }).eq('id', cookieId);
+      }
+    }
+  } catch (e) {
+    console.error("Failed to increment cookie clicks", e);
+  }
+}
+
+export async function createOrder(orderData) {
+  if (!supabase) {
+    console.warn("Supabase credentials not configured. Mocking order creation.");
+    return { data: orderData, error: null };
+  }
+  try {
+    const { data, error } = await supabase
+      .from('orders')
+      .insert([orderData])
+      .select()
+      .single();
+    return { data, error };
+  } catch (err) {
+    console.error("Failed to create order in Supabase", err);
+    return { data: null, error: err };
+  }
+}
+
+export async function fetchOrders() {
+  if (!supabase) {
+    console.warn("Supabase credentials not configured. Returning empty order list.");
+    return [];
+  }
+  try {
+    const { data, error } = await supabase
+      .from('orders')
+      .select('*')
+      .order('created_at', { ascending: false });
+    if (error) throw error;
+    return data || [];
+  } catch (err) {
+    console.error("Failed to fetch orders from Supabase", err);
+    return [];
+  }
+}
+
+export async function updateOrderStatus(orderId, status) {
+  if (!supabase) return { data: null, error: new Error("Supabase client is not initialized.") };
+  try {
+    const { data, error } = await supabase
+      .from('orders')
+      .update({ status })
+      .eq('id', orderId)
+      .select()
+      .single();
+    return { data, error };
+  } catch (err) {
+    console.error(`Failed to update order status for order ID: ${orderId}`, err);
+    return { data: null, error: err };
+  }
+}
+
+export async function createCorporateInquiry(inquiryData) {
+  if (!supabase) {
+    console.warn("Supabase credentials not configured. Mocking corporate inquiry creation.");
+    return { data: inquiryData, error: null };
+  }
+  try {
+    const { data, error } = await supabase
+      .from('corporate_inquiries')
+      .insert([inquiryData])
+      .select()
+      .single();
+    return { data, error };
+  } catch (err) {
+    console.error("Failed to create corporate inquiry in Supabase", err);
+    return { data: null, error: err };
+  }
+}
+
+export async function fetchCorporateInquiries() {
+  if (!supabase) {
+    console.warn("Supabase credentials not configured. Returning empty corporate inquiries list.");
+    return [];
+  }
+  try {
+    const { data, error } = await supabase
+      .from('corporate_inquiries')
+      .select('*')
+      .order('created_at', { ascending: false });
+    if (error) throw error;
+    return data || [];
+  } catch (err) {
+    console.error("Failed to fetch corporate inquiries from Supabase", err);
+    return [];
+  }
+}
+
+export async function updateCorporateInquiryStatus(inquiryId, status) {
+  if (!supabase) return { data: null, error: new Error("Supabase client is not initialized.") };
+  try {
+    const { data, error } = await supabase
+      .from('corporate_inquiries')
+      .update({ status })
+      .eq('id', inquiryId)
+      .select()
+      .single();
+    return { data, error };
+  } catch (err) {
+    console.error(`Failed to update corporate inquiry status for ID: ${inquiryId}`, err);
+    return { data: null, error: err };
+  }
+}
+

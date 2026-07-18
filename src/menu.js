@@ -5,7 +5,7 @@ import {
   generateShowcaseRowHTML, 
   showToast 
 } from './shared.js';
-import { fetchCookies } from './db/supabase.js';
+import { fetchCookies, incrementCookieViews, incrementCookieClicks } from './db/supabase.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   // Initialize shared structures (loader, nav, cart drawers, concierge desk)
@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     menuContainer.innerHTML = '';
     cookies.forEach((cookie, index) => {
       menuContainer.innerHTML += generateShowcaseRowHTML(cookie, index);
+      // Track view event
+      incrementCookieViews(cookie.id);
     });
 
     // Re-bind intersection observer for all page reveal items (including dynamic showcase)
@@ -42,7 +44,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         const name = btn.getAttribute('data-cookie');
         const price = parseFloat(btn.getAttribute('data-price'));
         const image = btn.getAttribute('data-image');
+        const id = btn.getAttribute('data-id');
         
+        // Track click event
+        if (id) {
+          incrementCookieClicks(parseInt(id));
+        }
+
         // Add to global cart as Selection Box package
         addCookieToCart(
           `Signature Selection Box`, 

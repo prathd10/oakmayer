@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | Oakmere Artisanal Cookies</title>
+  <meta name="description" content="Oakmere Artisanal Cookies Admin Control Panel">
+  <link rel="stylesheet" href="admin.css">
+  <script type="module" src="admin.js"></script>
+</head>
+<body>
+
+  <!-- Loading Overlay -->
+  <div id="admin-loader" class="loader-overlay">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <div id="app">
+    <!-- 1. LOGIN SCREEN -->
+    <div id="login-screen" class="login-container">
+      <div class="login-card">
+        <div class="login-header">
+          <span class="gold-accent">AN OAKMERE</span>
+          <h1>Admin Portal</h1>
+          <p>Sign in to access your dashboard and manage store catalog.</p>
+        </div>
+        <form id="login-form" class="login-form">
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <input type="email" id="login-email" required placeholder="name@oakmere.com">
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required placeholder="••••••••">
+          </div>
+          <button type="submit" class="btn-primary btn-submit">Sign In</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 2. DASHBOARD LAYOUT -->
+    <div id="dashboard-layout" class="dashboard-layout hidden">
+      
+      <!-- LEFT SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-logo">
+            <span class="brand-sub">AN OAKMERE</span>
+            <span class="brand-main">ADMIN PANEL</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <button class="nav-item active" data-tab="dashboard">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+            Dashboard
+          </button>
+          <button class="nav-item" data-tab="orders">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            Orders
+          </button>
+          <button class="nav-item" data-tab="corporate">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Corporate
+          </button>
+          <button class="nav-item" data-tab="catalog">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Catalog
+          </button>
+          <button class="nav-item" data-tab="add-product" id="sidebar-add-product-btn">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Add Product
+          </button>
+
+        </nav>
+
+        <!-- Sidebar footer profiles / signout -->
+        <div class="sidebar-footer">
+          <div class="user-profile">
+            <div class="avatar" id="user-avatar-initial">A</div>
+            <div class="user-info">
+              <span class="user-email" id="sidebar-user-email">admin@oakmere.com</span>
+            </div>
+          </div>
+          <a href="/" target="_blank" class="btn-secondary btn-view-site">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View Site
+          </a>
+          <button id="signout-btn" class="btn-signout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Sign Out
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT PANEL -->
+      <main class="main-panel">
+
+        <!-- TAB: DASHBOARD -->
+        <section id="tab-dashboard" class="tab-content">
+          <div class="page-header">
+            <h1 class="page-title">Dashboard</h1>
+            <p class="page-subtitle">Overview of your store's performance.</p>
+          </div>
+
+          <!-- METRICS GRID -->
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-card-header">
+                <span class="metric-label">Total Views</span>
+                <div class="metric-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+              </div>
+              <div class="metric-value" id="metric-views">0</div>
+              <div class="metric-trend positive">+12% from last month</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-card-header">
+                <span class="metric-label">Clicks</span>
+                <div class="metric-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+              </div>
+              <div class="metric-value" id="metric-clicks">0</div>
+              <div class="metric-trend positive">+5% from last month</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-card-header">
+                <span class="metric-label">Products</span>
+                <div class="metric-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                </div>
+              </div>
+              <div class="metric-value" id="metric-products">0</div>
+              <div class="metric-sub">Active in catalog</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-card-header">
+                <span class="metric-label">Top Item</span>
+                <div class="metric-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                </div>
+              </div>
+              <div class="metric-value small-text" id="metric-top-item">None</div>
+              <div class="metric-sub">Most engaged</div>
+            </div>
+          </div>
+
+          <!-- ENGAGEMENT REPORT -->
+          <div class="report-card">
+            <h2 class="report-title">Engagement Report</h2>
+            <div class="table-responsive">
+              <table class="report-table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th class="text-right">Views</th>
+                    <th class="text-right">Clicks</th>
+                    <th class="text-right">Total</th>
+                  </tr>
+                </thead>
+                <tbody id="engagement-table-body">
+                  <!-- Dynamic rows go here -->
+                  <tr>
+                    <td colspan="4" class="text-center text-muted">Loading engagement metrics...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: ORDERS -->
+        <section id="tab-orders" class="tab-content hidden">
+          <div class="page-header flex-header">
+            <div>
+              <h1 class="page-title">Orders</h1>
+              <p class="page-subtitle">Manage and track customer orders.</p>
+            </div>
+            <button class="btn-primary" id="orders-refresh-btn">
+              Refresh
+            </button>
+          </div>
+
+          <div class="filter-bar">
+            <input type="text" id="orders-search" placeholder="Search orders by customer name, email or ID...">
+          </div>
+
+          <!-- Orders Table -->
+          <div class="report-card">
+            <div class="table-responsive">
+              <table class="report-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th class="text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="orders-table-body">
+                  <!-- Dynamic rows -->
+                  <tr>
+                    <td colspan="6" class="text-center text-muted">Loading orders...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: CORPORATE INQUIRIES -->
+        <section id="tab-corporate" class="tab-content hidden">
+          <div class="page-header flex-header">
+            <div>
+              <h1 class="page-title">Corporate Concierge</h1>
+              <p class="page-subtitle">Manage and review bespoke corporate inquiries.</p>
+            </div>
+            <button class="btn-primary" id="corporate-refresh-btn">
+              Refresh
+            </button>
+          </div>
+
+          <div class="filter-bar">
+            <input type="text" id="corporate-search" placeholder="Search corporate by company name, contact representative or email...">
+          </div>
+
+          <!-- Corporate Table -->
+          <div class="report-card">
+            <div class="table-responsive">
+              <table class="report-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Company</th>
+                    <th>Contact Representative</th>
+                    <th>Quantity</th>
+                    <th>Budget Tier</th>
+                    <th>Status</th>
+                    <th class="text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="corporate-table-body">
+                  <!-- Dynamic rows -->
+                  <tr>
+                    <td colspan="7" class="text-center text-muted">Loading inquiries...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: CATALOG -->
+        <section id="tab-catalog" class="tab-content hidden">
+          <div class="page-header flex-header">
+            <div>
+              <h1 class="page-title">Product Catalog</h1>
+              <p class="page-subtitle">Manage your cookies in the catalog.</p>
+            </div>
+            <button class="btn-primary" id="catalog-add-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Add Product
+            </button>
+          </div>
+
+          <div class="filter-bar">
+            <input type="text" id="catalog-search" placeholder="Search catalog by name or ingredients...">
+          </div>
+
+          <!-- Catalog List -->
+          <div class="catalog-list" id="catalog-list-container">
+            <!-- Dynamic product cards -->
+            <div class="text-center text-muted py-5">Loading catalog items...</div>
+          </div>
+        </section>
+
+        <!-- TAB: ADD/EDIT PRODUCT -->
+        <section id="tab-add-product" class="tab-content hidden">
+          <div class="page-header">
+            <h1 class="page-title" id="product-form-title">Add New Product</h1>
+            <p class="page-subtitle" id="product-form-subtitle">Fill in the details below to add a product to the menu.</p>
+          </div>
+
+          <div class="form-card">
+            <form id="product-form">
+              <!-- Hidden product ID for editing -->
+              <input type="hidden" id="product-id">
+              
+              <div class="form-row">
+                <div class="form-group flex-2">
+                  <label for="product-name">Product Name *</label>
+                  <input type="text" id="product-name" required placeholder="e.g. The Golden Hazelnut Praline">
+                </div>
+                <div class="form-group flex-1">
+                  <label for="product-price">Price (₹) *</label>
+                  <input type="number" id="product-price" required step="0.01" min="0" placeholder="e.g. 48.00">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="product-ingredients">Key Ingredients *</label>
+                <input type="text" id="product-ingredients" required placeholder="e.g. Piedmont Hazelnuts & House-Made Dark Chocolate Praline">
+              </div>
+
+              <div class="form-group">
+                <label for="product-description">Description *</label>
+                <textarea id="product-description" required rows="4" placeholder="Describe the cookie profile and baking detail..."></textarea>
+              </div>
+
+              <div class="form-row align-center">
+                <!-- Checkbox for Top Seller -->
+                <div class="form-group flex-1">
+                  <label class="checkbox-container">
+                    <input type="checkbox" id="product-top-seller">
+                    <span class="checkbox-custom"></span>
+                    Mark as Top Seller (Shows up on homepage showcase)
+                  </label>
+                </div>
+                
+                <!-- ID/ID Number for product -->
+                <div class="form-group flex-1" id="product-custom-id-group">
+                  <label for="product-custom-id">Custom Product ID (Number) *</label>
+                  <input type="number" id="product-custom-id" placeholder="Unique numeric ID, e.g. 11">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Product Image *</label>
+                <div class="image-upload-wrapper">
+                  <div class="image-preview-box" id="image-preview">
+                    <span class="preview-placeholder">No image selected</span>
+                    <img id="preview-img" class="hidden" src="" alt="Product Preview">
+                  </div>
+                  <div class="image-upload-controls">
+                    <label for="product-image-file" class="btn-secondary btn-upload">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                      Choose File
+                    </label>
+                    <input type="file" id="product-image-file" accept="image/*" class="hidden">
+                    <span class="file-name-display" id="file-name-label">No file chosen</span>
+                    <input type="hidden" id="product-image-path">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn-secondary" id="product-form-cancel">Cancel</button>
+                <button type="submit" class="btn-primary" id="product-form-submit">Save Product</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Order Details Modal -->
+  <div class="inquiry-modal-overlay" id="order-details-modal">
+    <div class="inquiry-modal-card" style="max-width: 600px; padding: 3rem;">
+      <button class="inquiry-close-btn" id="order-details-close" aria-label="Close Modal">&times;</button>
+      <div class="inquiry-modal-header" style="margin-bottom: 2rem;">
+        <span class="gold-accent" id="detail-order-id">ORDER DETAILS</span>
+        <h2 id="detail-customer-name">Customer Name</h2>
+        <p id="detail-customer-meta">customer@email.com • +1 555 1234</p>
+      </div>
+      
+      <div style="margin-bottom: 1.5rem; text-align: left;">
+        <h4 style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy-light); margin-bottom: 0.5rem; font-weight: 600;">Shipping Address</h4>
+        <p id="detail-shipping-address" style="font-size: 0.88rem; color: var(--text-dark); background: var(--beige-light); padding: 0.8rem; border: 1px solid var(--beige-dark); line-height: 1.5; margin: 0;">123 Shipping St, New York, NY 10001</p>
+      </div>
+
+      <div style="margin-bottom: 1.8rem; text-align: left;">
+        <h4 style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy-light); margin-bottom: 0.5rem; font-weight: 600;">Items Ordered</h4>
+        <div id="detail-items-list" style="max-height: 180px; overflow-y: auto; border: 1px solid var(--beige-dark); background: var(--white); padding: 0.5rem;">
+          <!-- Dynamic items row -->
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(38, 57, 72, 0.08); padding-top: 1.5rem; text-align: left;">
+        <div>
+          <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 0.2rem;">Total Amount</span>
+          <div id="detail-amount" style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--navy); line-height: 1; font-weight: 500;">₹0.00</div>
+        </div>
+        <div>
+          <label for="detail-status-select" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); display: block; margin-bottom: 0.3rem; font-weight: 600;">Order Status</label>
+          <select id="detail-status-select" style="padding: 0.5rem 1rem; border: 1px solid var(--beige-dark); background: var(--white); font-size: 0.85rem; font-family: var(--font-sans); outline: none;">
+            <option value="Paid">Paid</option>
+            <option value="Shipped">Shipped</option>
+            <option value="Delivered">Delivered</option>
+            <option value="Failed">Failed</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate Inquiry Details Modal -->
+  <div class="inquiry-modal-overlay" id="corporate-details-modal">
+    <div class="inquiry-modal-card" style="max-width: 600px; padding: 3rem;">
+      <button class="inquiry-close-btn" id="corporate-details-close" aria-label="Close Modal">&times;</button>
+      <div class="inquiry-modal-header" style="margin-bottom: 2rem;">
+        <span class="gold-accent">CORPORATE CONCIERGE DESK</span>
+        <h2 id="corp-detail-company">Company Name</h2>
+        <p id="corp-detail-contact">Contact Representative</p>
+      </div>
+      
+      <div style="display: flex; gap: 2rem; margin-bottom: 1.5rem; text-align: left;">
+        <div style="flex: 1;">
+          <h4 style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy-light); margin-bottom: 0.3rem; font-weight: 600;">Email Address</h4>
+          <p id="corp-detail-email" style="font-size: 0.9rem; color: var(--text-dark); margin: 0;">corp@company.com</p>
+        </div>
+        <div style="flex: 1;">
+          <h4 style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy-light); margin-bottom: 0.3rem; font-weight: 600;">Phone Number</h4>
+          <p id="corp-detail-phone" style="font-size: 0.9rem; color: var(--text-dark); margin: 0;">+91 98765 43210</p>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 2rem; margin-bottom: 1.5rem; text-align: left;">
+        <div style="flex: 1;">
+          <h4 style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy-light); margin-bottom: 0.3rem; font-weight: 600;">Target Quantity</h4>
+          <p id="corp-detail-qty" style="font-size: 0.9rem; color: var(--text-dark); margin: 0;">50 Boxes</p>
+        </div>
+        <div style="flex: 1;">
+          <h4 style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy-light); margin-bottom: 0.3rem; font-weight: 600;">Logo Stamping</h4>
+          <p id="corp-detail-stamp" style="font-size: 0.9rem; color: var(--text-dark); margin: 0;">Yes</p>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 2rem; margin-bottom: 1.5rem; text-align: left;">
+        <div style="flex: 1;">
+          <h4 style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy-light); margin-bottom: 0.3rem; font-weight: 600;">Delivery Target</h4>
+          <p id="corp-detail-date" style="font-size: 0.9rem; color: var(--text-dark); margin: 0;">24 May 2026</p>
+        </div>
+        <div style="flex: 1;">
+          <h4 style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy-light); margin-bottom: 0.3rem; font-weight: 600;">Estimated Budget</h4>
+          <p id="corp-detail-budget" style="font-size: 0.9rem; color: var(--text-dark); margin: 0;">₹25,000 - ₹1,00,000</p>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 1.8rem; text-align: left;">
+        <h4 style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy-light); margin-bottom: 0.5rem; font-weight: 600;">Branding & Assortment Notes</h4>
+        <p id="corp-detail-notes" style="font-size: 0.88rem; color: var(--text-dark); background: var(--beige-light); padding: 0.8rem; border: 1px solid var(--beige-dark); line-height: 1.5; margin: 0; min-height: 80px;">No notes provided.</p>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(38, 57, 72, 0.08); padding-top: 1.5rem; text-align: left;">
+        <div>
+          <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 0.2rem;">Date Registered</span>
+          <div id="corp-detail-created" style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--navy); line-height: 1; font-weight: 500;">10 May 2026</div>
+        </div>
+        <div>
+          <label for="corp-detail-status" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); display: block; margin-bottom: 0.3rem; font-weight: 600;">Inquiry Status</label>
+          <select id="corp-detail-status" style="padding: 0.5rem 1rem; border: 1px solid var(--beige-dark); background: var(--white); font-size: 0.85rem; font-family: var(--font-sans); outline: none;">
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="In Production">In Production</option>
+            <option value="Delivered">Delivered</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+</body>
+</html>

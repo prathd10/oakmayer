@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Concierge | Oakmere Artisanal Cookies</title>
+  <meta name="description" content="Express professional distinction with custom branded cookie caskets, logo stamps, and concierge bulk logistics.">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;700&family=Montserrat:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .corporate-hero {
+      padding-top: 10rem;
+      padding-bottom: 6rem;
+      background-color: var(--navy);
+      color: var(--beige-light);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .corporate-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(197, 160, 89, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .corporate-hero h1 {
+      font-size: 3.6rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .corporate-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+    .corporate-card {
+      background-color: rgba(38, 57, 72, 0.95);
+      border: 1px solid rgba(197, 160, 89, 0.2);
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+      text-align: left;
+    }
+    .corporate-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-5px);
+    }
+    .corporate-card h3 {
+      font-family: var(--font-primary);
+      font-size: 1.5rem;
+      color: var(--beige-light);
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    .corporate-card p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: rgba(249, 243, 235, 0.7);
+    }
+    .tier-table-wrapper {
+      margin-top: 5rem;
+      background-color: var(--white);
+      border: 1px solid rgba(38, 57, 72, 0.08);
+      padding: 3rem;
+      box-shadow: var(--shadow-premium);
+    }
+    .tier-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .tier-table th {
+      font-family: var(--font-secondary);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--navy-blue);
+      padding: 1.2rem;
+      border-bottom: 2px solid rgba(38, 57, 72, 0.08);
+      font-weight: 700;
+    }
+    .tier-table td {
+      padding: 1.5rem 1.2rem;
+      border-bottom: 1px solid rgba(38, 57, 72, 0.05);
+      font-size: 0.9rem;
+    }
+    .form-section {
+      padding: 7rem 0;
+      background-color: var(--beige-light);
+    }
+    .corp-form-card {
+      background-color: var(--white);
+      border: 1px solid rgba(38, 57, 72, 0.08);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem;
+      box-shadow: var(--shadow-premium);
+    }
+    .form-grid-row {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-grid-group {
+      flex: 1;
+    }
+    .form-grid-group label {
+      display: block;
+      font-weight: 800;
+      font-family: var(--font-sans);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      color: var(--navy-blue);
+      margin-bottom: 0.4rem;
+    }
+    .form-grid-group input,
+    .form-grid-group select,
+    .form-grid-group textarea {
+      width: 100%;
+      border: 2px solid rgba(38, 57, 72, 0.15);
+      padding: 0.8rem;
+      font-size: 0.92rem;
+      font-family: var(--font-sans);
+      outline: none;
+      transition: border-color 0.2s;
+      border-radius: 0;
+      background-color: var(--white);
+    }
+    .form-grid-group input:focus,
+    .form-grid-group select:focus,
+    .form-grid-group textarea:focus {
+      border-color: var(--navy-blue);
+    }
+    @media (max-width: 768px) {
+      .corporate-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-grid-row {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .corp-form-card {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body class="menu-page-body">
+
+  <!-- Header -->
+  <header id="main-header">
+    <div class="container nav-wrapper">
+      <a href="/" class="logo" id="header-logo">OAKMERE</a>
+      <nav id="navbar-links">
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/gifting">Gifting Suite</a>
+        <a href="/corporate" class="nav-active">Corporate Concierge</a>
+        <a href="/#about">About Us</a>
+      </nav>
+      <div class="header-icons">
+        <button class="nav-icon" id="cart-toggle-btn" aria-label="Open shopping bag">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="header-cart-count">0</span>
+        </button>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay (backdrop) -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <div class="mobile-nav-drawer">
+      <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation menu">&times;</button>
+      <nav class="mobile-nav-links">
+        <a href="/" class="mobile-nav-link">Home</a>
+        <a href="/menu" class="mobile-nav-link">Menu</a>
+        <a href="/gifting" class="mobile-nav-link">Gifting Suite</a>
+        <a href="/corporate" class="mobile-nav-link nav-active">Corporate Concierge</a>
+        <a href="/#about" class="mobile-nav-link">About Us</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <span class="gold-accent">OAKMERE</span>
+        <p>Artisanal. Uncompromising. Yours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="corporate-hero">
+    <div class="container">
+      <span class="gold-accent" style="letter-spacing: 0.25em;">BESPOKE CONCIERGE DESK</span>
+      <h1 style="font-family: var(--font-primary); font-weight: 300;">Corporate Gratitude Redefined</h1>
+      <p style="max-width: 700px; margin: 0 auto; line-height: 1.7; color: rgba(249, 243, 235, 0.8);">
+        Express professional distinction with custom-branded cookie caskets, logo wax seals, and bespoke delivery routing. Tell us about your event and our corporate concierge desk will align with you within 12 hours.
+      </p>
+
+      <div class="corporate-grid">
+        <div class="corporate-card">
+          <span class="gold-accent" style="font-size: 0.65rem;">01 / ESTEEMED BRANDING</span>
+          <h3>Custom Logo Stamp</h3>
+          <p>We hot-stamp your organization's logo directly onto our rigid navy drawers, wrapped in custom gold foil, complete with color-matched wax seals.</p>
+        </div>
+        <div class="corporate-card">
+          <span class="gold-accent" style="font-size: 0.65rem;">02 / DIETARY ASSORTMENT</span>
+          <h3>Cured Flavor Curations</h3>
+          <p>Hand-bake customizable combinations of our 36-hour cold rest selection including vegan and gluten-free variations to accommodate all stakeholders.</p>
+        </div>
+        <div class="corporate-card">
+          <span class="gold-accent" style="font-size: 0.65rem;">03 / LOGISTICS COURIERS</span>
+          <h3>Concierge Routing</h3>
+          <p>Painless distribution management. Send us a spreadsheet of recipient addresses, and we will handle secure individual white-glove delivery tracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="form-section">
+    <div class="container">
+      
+      <div class="corp-form-card">
+        <div class="inquiry-modal-header" style="margin-bottom: 3rem; text-align: center;">
+          <span class="gold-accent" style="font-weight: 800; letter-spacing: 0.18em; font-size: 0.75rem;">ONBOARDING PORTAL</span>
+          <h2 style="font-family: var(--font-primary); font-weight: 300; font-size: 2.8rem; color: var(--navy-blue); margin-top: 0.5rem; line-height: 1.1;">Corporate Inquiry Form</h2>
+          <p style="font-size: 0.92rem; color: rgba(38, 57, 72, 0.7); margin-top: 0.5rem; line-height: 1.5; font-family: var(--font-sans);">Provide your company profiles to register your concierge account.</p>
+        </div>
+
+        <form id="corporate-portal-form">
+          <div class="form-grid-row">
+            <div class="form-grid-group">
+              <label for="corp-name">Representative Name *</label>
+              <input type="text" id="corp-name" required placeholder="Alexander Vance">
+            </div>
+            <div class="form-grid-group">
+              <label for="corp-company">Company Name *</label>
+              <input type="text" id="corp-company" required placeholder="Vance Industries Ltd.">
+            </div>
+          </div>
+
+          <div class="form-grid-row">
+            <div class="form-grid-group">
+              <label for="corp-email">Work Email *</label>
+              <input type="email" id="corp-email" required placeholder="alex@vance.com">
+            </div>
+            <div class="form-grid-group">
+              <label for="corp-phone">Phone Number *</label>
+              <input type="tel" id="corp-phone" required placeholder="+91 98765 43210">
+            </div>
+          </div>
+
+          <div class="form-grid-row">
+            <div class="form-grid-group">
+              <label for="corp-qty">Expected Quantity (Boxes) *</label>
+              <input type="number" id="corp-qty" required min="10" placeholder="e.g. 50">
+            </div>
+            <div class="form-grid-group">
+              <label for="corp-stamp">Logo Stamping Required? *</label>
+              <select id="corp-stamp" required>
+                <option value="no">No, standard Oakmere branding</option>
+                <option value="yes">Yes, custom wax seal / gold hot-stamp (+₹2,500 setup fee)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-row">
+            <div class="form-grid-group">
+              <label for="corp-budget">Estimated Budget Tier *</label>
+              <select id="corp-budget" required>
+                <option value="Under ₹25,000">Under ₹25,000</option>
+                <option value="₹25,000 - ₹1,00,000">₹25,000 - ₹1,00,000</option>
+                <option value="₹1,00,000 - ₹5,00,000">₹1,00,000 - ₹5,00,000</option>
+                <option value="₹5,00,000+">₹5,00,000+ (High Volume Custom)</option>
+              </select>
+            </div>
+            <div class="form-grid-group">
+              <label for="corp-date">Preferred Delivery Date *</label>
+              <input type="date" id="corp-date" required>
+            </div>
+          </div>
+
+          <div class="form-grid-group" style="margin-bottom: 2rem;">
+            <label for="corp-notes">Branding Requirements & Custom Flavors</label>
+            <textarea id="corp-notes" placeholder="Please specify ribbon preferences, Monogram card messages, or any specific flavor caskets requested..." style="height: 120px;"></textarea>
+          </div>
+
+          <button type="submit" class="btn-premium btn-hero" style="width: 100%; padding: 1.2rem; border-radius: 0; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.85rem;">Submit Onboarding Inquiry</button>
+        </form>
+      </div>
+
+      <!-- Tiers Table -->
+      <div class="tier-table-wrapper">
+        <h3 style="font-family: var(--font-primary); font-size: 2.2rem; font-weight: 300; color: var(--navy-blue); margin-bottom: 1.5rem; text-align: center;">Bulk Discount Tiers</h3>
+        <table class="tier-table">
+          <thead>
+            <tr>
+              <th>Order Quantity</th>
+              <th>Discount Applied</th>
+              <th>Branding Setup Fee</th>
+              <th>Concierge Manager</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>10 – 49 Boxes</strong></td>
+              <td>5% Off Box Base Price</td>
+              <td>₹2,500 One-time setup</td>
+              <td>Digital Desk support</td>
+            </tr>
+            <tr>
+              <td><strong>50 – 99 Boxes</strong></td>
+              <td>10% Off Box Base Price</td>
+              <td>Waived Setup Fee</td>
+              <td>Assigned Junior Specialist</td>
+            </tr>
+            <tr>
+              <td><strong>100+ Boxes</strong></td>
+              <td>15% Off Box Base Price</td>
+              <td>Waived Setup Fee + Complimentary Samples</td>
+              <td>Dedicated Account Executive</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cart Drawer Overlay & Panel -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer-panel">
+    <div class="cart-header">
+      <h3>Your Selection Drawer</h3>
+      <button class="cart-close-btn" id="cart-close-btn" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items-container"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-value" id="cart-subtotal-val">₹0.00</span>
+      </div>
+      <button class="btn-premium btn-primary cart-checkout-btn" id="checkout-action-btn">Proceed to checkout</button>
+    </div>
+  </aside>
+
+  <!-- Toast notifications -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script type="module" src="/src/corporate.js"></script>
+</body>
+</html>
